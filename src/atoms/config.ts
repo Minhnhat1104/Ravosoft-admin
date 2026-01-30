@@ -8,7 +8,7 @@ interface DefaultConfigProps {
 }
 
 const themeMode = localStorageService.get(LOCAL_STORAGE_KEY.THEME_MODE);
-console.log('🚀 ~ themeMode:', themeMode);
+
 const isDarkMode = themeMode
   ? themeMode === 'dark'
   : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -18,7 +18,8 @@ if (!themeMode) {
 }
 
 const config: DefaultConfigProps = {
-  mode: isDarkMode ? 'dark' : 'light',
+  // mode: isDarkMode ? 'dark' : 'light',
+  mode: 'light',
   enableTrans: false,
 };
 
