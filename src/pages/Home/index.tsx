@@ -1,8 +1,9 @@
 import { CalendarMonth, InfoOutline } from '@mui/icons-material';
-import { Alert, Button, Container, Paper, Stack, Typography } from '@mui/material';
+import { Alert, Button, Container, Grid, Paper, Stack, Typography } from '@mui/material';
 import React, { lazy } from 'react';
 import PrimaryStats from './PrimaryStats';
 import SecondaryStats from './SecondaryStats';
+import SalesAndPurchase from './SalesAndPurchase';
 
 interface HomeProps {}
 
@@ -36,6 +37,14 @@ function Home({}: HomeProps) {
       <PrimaryStats />
 
       <SecondaryStats sx={{ my: 3 }} />
+
+      <Grid container spacing={3}>
+        <Grid size={{ xs: 12, md: 9 }}>
+          <SalesAndPurchase />
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}></Grid>
+      </Grid>
+
       {/* </Paper> */}
     </Container>
   );

@@ -49,7 +49,7 @@ function App() {
       >
         <RecoilRoot>
           <ThemeCustomization>
-            <Stack sx={{ width: 1, height: '100vh', background: theme.palette.grey[100] }}>
+            <Stack sx={{ width: 1, height: '100vh', background: theme.palette.grey[100], overflowY: 'auto' }}>
               <CssBaseline />
               <ToastContext>
                 <QueryClientProvider client={queryClient}>
