@@ -5,8 +5,11 @@ import PrimaryStats from './PrimaryStats';
 import SecondaryStats from './SecondaryStats';
 import SalesAndPurchase from './SalesAndPurchase';
 import Overall from './Overall';
+import TopSellingProducts from './TopSellingProducts';
 
 interface HomeProps {}
+
+export const WIDGET_SPACING = 3;
 
 function Home({}: HomeProps) {
   return (
@@ -46,6 +49,14 @@ function Home({}: HomeProps) {
         <Grid size={{ xs: 12, md: 4 }}>
           <Overall />
         </Grid>
+      </Grid>
+
+      <Grid container spacing={3} mt={3}>
+        <Grid size={{ xs: 12, md: 4 }}>
+          <TopSellingProducts />
+        </Grid>
+        <Grid size={{ xs: 12, md: 4 }}>{/* <TopSellingProducts /> */}</Grid>
+        <Grid size={{ xs: 12, md: 4 }}>{/* <TopSellingProducts /> */}</Grid>
       </Grid>
 
       {/* </Paper> */}

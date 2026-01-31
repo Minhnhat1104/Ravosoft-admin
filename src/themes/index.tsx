@@ -43,7 +43,6 @@ export default function ThemeCustomization({ children }: ThemeCustomizationProps
   const presetColor = 'default';
   const fontFamily = 'Roboto,sans-serif';
   const { mode } = useRecoilValue(configState);
-  console.log('🚀 ~ ThemeCustomization ~ mode:', mode);
   const theme: Theme = useMemo<Theme>(() => Palette(mode, presetColor), [mode, presetColor]);
 
   const themeTypography: TypographyVariantsOptions = useMemo<TypographyVariantsOptions>(

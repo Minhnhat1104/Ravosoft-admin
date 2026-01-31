@@ -93,11 +93,11 @@ const Palette = (mode: ThemeMode, presetColor: PresetColor) => {
       action: {
         disabled: paletteColor.grey[300],
       },
-      divider: mode === 'dark' ? alpha(paletteColor.grey[900]!, 0.05) : paletteColor.grey[200],
+      divider: mode === 'dark' ? paletteColor.grey[200] : paletteColor.grey[200],
       border: {
         light: paletteColor.grey[200] || '',
-        main: paletteColor.grey[400] || '',
-        dark: paletteColor.grey[600] || '',
+        main: paletteColor.grey[200] || '',
+        dark: paletteColor.grey[500] || '',
       },
       background: {
         paper: mode === 'dark' ? paletteColor.grey[100] : paletteColor.grey[0],
