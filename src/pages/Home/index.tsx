@@ -4,6 +4,7 @@ import React, { lazy } from 'react';
 import PrimaryStats from './PrimaryStats';
 import SecondaryStats from './SecondaryStats';
 import SalesAndPurchase from './SalesAndPurchase';
+import Overall from './Overall';
 
 interface HomeProps {}
 
@@ -39,10 +40,12 @@ function Home({}: HomeProps) {
       <SecondaryStats sx={{ my: 3 }} />
 
       <Grid container spacing={3}>
-        <Grid size={{ xs: 12, md: 9 }}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <SalesAndPurchase />
         </Grid>
-        <Grid size={{ xs: 12, md: 3 }}></Grid>
+        <Grid size={{ xs: 12, md: 4 }}>
+          <Overall />
+        </Grid>
       </Grid>
 
       {/* </Paper> */}

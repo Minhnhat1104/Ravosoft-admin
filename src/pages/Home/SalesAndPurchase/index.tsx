@@ -88,7 +88,7 @@ const SalesAndPurchase = () => {
           <Item label="Total Sales" value="1K" />
         </Stack>
 
-        <Box sx={{ width: '100%', height: 300 }}>
+        <Box sx={{ width: '100%', height: 277, ml: -2, mb: -2 }}>
           <BarChart
             series={[
               { data: uData, label: 'Sales', id: 'uvId', stack: 'total', color: theme.palette.warning.main },

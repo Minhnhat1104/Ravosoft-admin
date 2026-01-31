@@ -3,6 +3,8 @@ import { SimplePaletteColorOptions, PaletteColorOptions } from '@mui/material/st
 
 // ==============================|| DEFAULT THEME - TYPES  ||============================== //
 
+export type PalleteColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success';
+
 export type PaletteThemeProps = {
   primary: SimplePaletteColorOptions;
   secondary: SimplePaletteColorOptions;
