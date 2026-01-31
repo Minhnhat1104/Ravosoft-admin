@@ -6,6 +6,7 @@ import SecondaryStats from './SecondaryStats';
 import SalesAndPurchase from './SalesAndPurchase';
 import Overall from './Overall';
 import TopSellingProducts from './TopSellingProducts';
+import LowStockProducts from './LowStockProducts';
 
 interface HomeProps {}
 
@@ -55,7 +56,9 @@ function Home({}: HomeProps) {
         <Grid size={{ xs: 12, md: 4 }}>
           <TopSellingProducts />
         </Grid>
-        <Grid size={{ xs: 12, md: 4 }}>{/* <TopSellingProducts /> */}</Grid>
+        <Grid size={{ xs: 12, md: 4 }}>
+          <LowStockProducts />
+        </Grid>
         <Grid size={{ xs: 12, md: 4 }}>{/* <TopSellingProducts /> */}</Grid>
       </Grid>
 
