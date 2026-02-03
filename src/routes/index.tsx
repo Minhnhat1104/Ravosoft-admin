@@ -29,10 +29,6 @@ const publicRoutes: RouteObject[] = [
         element: <Demo />,
         children: demoRoute,
       },
-      {
-        index: true,
-        element: <Navigate to="/explore" />,
-      },
     ],
   },
   {
