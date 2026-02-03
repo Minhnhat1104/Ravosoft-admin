@@ -33,22 +33,22 @@ function ResetPassword() {
   } = useForm<ResetPasswordFormData>();
 
   const onSubmit: SubmitHandler<ResetPasswordFormData> = async (data) => {
-    if (data?.password1 !== data?.password2) {
-      setError('password2', {
-        message: 'Passwords are different!',
-      });
-      return;
-    }
-    const res = await mUserResetPassword.mutateAsync(
-      {
-        password: data?.password1,
-      },
-      {
-        onSuccess: (res) => {
-          setUser(res?.data?.rows);
-        },
-      }
-    );
+    // if (data?.password1 !== data?.password2) {
+    //   setError('password2', {
+    //     message: 'Passwords are different!',
+    //   });
+    //   return;
+    // }
+    // const res = await mUserResetPassword.mutateAsync(
+    //   {
+    //     password: data?.password1,
+    //   },
+    //   {
+    //     onSuccess: (res) => {
+    //       setUser(res?.data?.rows);
+    //     },
+    //   }
+    // );
   };
 
   if (!resetToken) {

@@ -15,7 +15,11 @@ import LanguageSelect from '~/components/LanguageSelect';
 import { t } from 'i18next';
 import { LangKey } from '~/lang/langKey';
 
-function Header() {
+interface HeaderProps {
+  isLogin?: boolean;
+}
+
+function Header({ isLogin }: HeaderProps) {
   const [user, setUser] = useRecoilState(userState);
   const theme = useTheme();
   const [openWrite, setOpenWrite] = useState<boolean>(false);
@@ -59,15 +63,12 @@ function Header() {
               </Typography>
             </Stack>
           </Link>
-          {user ? (
+          {isLogin ? (
             <>
               <NavList />
               <Stack direction="row" alignItems="center" spacing={1}>
                 <LanguageSelect />
                 <ThemeToggle />
-                <IconButton size="medium" onClick={() => setOpenWrite(true)}>
-                  <UploadOutlined />
-                </IconButton>
                 <Profile />
               </Stack>
             </>

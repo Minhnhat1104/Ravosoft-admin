@@ -10,7 +10,7 @@ function DefaultLayout() {
       height={'100vh'}
       sx={{ background: theme.palette.background.paper, transition: 'background 0.3s ease-in-out' }}
     >
-      <Header />
+      <Header isLogin />
 
       <Stack
         sx={{

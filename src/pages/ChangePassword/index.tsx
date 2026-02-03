@@ -35,16 +35,16 @@ function ChangePassword() {
   } = useForm<ChangePasswordFormData>();
 
   const onSubmit: SubmitHandler<ChangePasswordFormData> = async (data) => {
-    if (data?.newPassword1 !== data?.newPassword2) {
-      setError('newPassword2', {
-        message: 'Passwords are different!',
-      });
-      return;
-    }
-    const res = await mChangePassword.mutateAsync({
-      oldPassword: data?.oldPassword,
-      newPassword: data?.newPassword1,
-    });
+    // if (data?.newPassword1 !== data?.newPassword2) {
+    //   setError('newPassword2', {
+    //     message: 'Passwords are different!',
+    //   });
+    //   return;
+    // }
+    // const res = await mChangePassword.mutateAsync({
+    //   oldPassword: data?.oldPassword,
+    //   newPassword: data?.newPassword1,
+    // });
   };
 
   return (

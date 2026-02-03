@@ -28,19 +28,20 @@ function Register() {
   } = useForm<RegisterFormData>();
 
   const onSubmit: SubmitHandler<RegisterFormData> = async (data) => {
-    const res = await mRegisterUser.mutateAsync(
-      {
-        email: data?.email,
-        firstName: data?.firstName,
-        lastName: data?.lastName,
-        password: data?.password,
-      },
-      {
-        onSuccess: () => {
-          navigate('/login');
-        },
-      }
-    );
+    // const res = await mRegisterUser.mutateAsync(
+    //   {
+    //     email: data?.email,
+    //     firstName: data?.firstName,
+    //     lastName: data?.lastName,
+    //     password: data?.password,
+    //   },
+    //   {
+    //     onSuccess: () => {
+    //       navigate('/login');
+    //     },
+    //   }
+    // );
+    navigate('/login');
   };
 
   return (

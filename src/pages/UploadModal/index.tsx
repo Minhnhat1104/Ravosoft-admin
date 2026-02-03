@@ -39,24 +39,23 @@ function UploadModal(props: UploadModalProps) {
   } = useForm<UploadFormData>();
 
   const onSubmit: SubmitHandler<UploadFormData> = async (data) => {
-    const formData = new FormData();
-    data?.photos.forEach((file) => {
-      formData.append('photos', file);
-    });
-    formData.append('name', data?.name);
-    formData.append('description', data?.description);
-    formData.append('creator_id', user?.id?.toString() || '');
-
-    mCreate.mutate(formData, {
-      onSuccess(data, variables, context) {
-        setTimeout(() => {
-          queryClient.invalidateQueries({
-            queryKey: [queryKeys.imageList],
-          });
-        }, SET_TIMEOUT);
-        onClose();
-      },
-    });
+    // const formData = new FormData();
+    // data?.photos.forEach((file) => {
+    //   formData.append('photos', file);
+    // });
+    // formData.append('name', data?.name);
+    // formData.append('description', data?.description);
+    // formData.append('creator_id', user?.id?.toString() || '');
+    // mCreate.mutate(formData, {
+    //   onSuccess(data, variables, context) {
+    //     setTimeout(() => {
+    //       queryClient.invalidateQueries({
+    //         queryKey: [queryKeys.imageList],
+    //       });
+    //     }, SET_TIMEOUT);
+    //     onClose();
+    //   },
+    // });
   };
 
   return (

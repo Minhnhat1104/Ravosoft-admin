@@ -30,16 +30,16 @@ function ForgetPassword() {
   } = useForm<ForgetPasswordFormData>();
 
   const onSubmit: SubmitHandler<ForgetPasswordFormData> = async (data) => {
-    const res = await mUserForgetPassword.mutateAsync(
-      {
-        email: data?.email,
-      },
-      {
-        onSuccess: (res) => {
-          setUser(res?.data?.rows);
-        },
-      }
-    );
+    // const res = await mUserForgetPassword.mutateAsync(
+    //   {
+    //     email: data?.email,
+    //   },
+    //   {
+    //     onSuccess: (res) => {
+    //       setUser(res?.data?.rows);
+    //     },
+    //   }
+    // );
   };
 
   return (

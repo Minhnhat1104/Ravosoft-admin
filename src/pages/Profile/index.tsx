@@ -38,27 +38,27 @@ function Profile() {
   });
 
   const onSubmit: SubmitHandler<ProfileFormData> = async (data) => {
-    const res = await mProfileUpdate.mutateAsync(
-      {
-        email: data?.email,
-        firstName: data?.firstName,
-        lastName: data?.lastName,
-        phone: data?.phone,
-      },
-      {
-        onSuccess: () => {
-          setUser((prev) =>
-            prev
-              ? {
-                  ...prev,
-                  first_name: data?.firstName || '',
-                  last_name: data?.lastName || '',
-                }
-              : null
-          );
-        },
-      }
-    );
+    // const res = await mProfileUpdate.mutateAsync(
+    //   {
+    //     email: data?.email,
+    //     firstName: data?.firstName,
+    //     lastName: data?.lastName,
+    //     phone: data?.phone,
+    //   },
+    //   {
+    //     onSuccess: () => {
+    //       setUser((prev) =>
+    //         prev
+    //           ? {
+    //               ...prev,
+    //               first_name: data?.firstName || '',
+    //               last_name: data?.lastName || '',
+    //             }
+    //           : null
+    //       );
+    //     },
+    //   }
+    // );
   };
 
   return (

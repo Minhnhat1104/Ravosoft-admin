@@ -22,9 +22,9 @@ const ProfileContent = (props: ProfileContentProps) => {
   const { mUserLogout } = useAuthMutation();
 
   const handleLogout = async () => {
-    await mUserLogout.mutateAsync({});
-    setUser(null);
-    cookieService.remove(COOKIE_KEY.REFRESH_TOKEN);
+    // await mUserLogout.mutateAsync({});
+    // setUser(null);
+    // cookieService.remove(COOKIE_KEY.REFRESH_TOKEN);
     navigate('/login');
   };
 
