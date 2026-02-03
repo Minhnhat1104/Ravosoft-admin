@@ -1,22 +1,29 @@
 import Header from '../Header';
 import React from 'react';
-import { Box, Container, Stack } from '@mui/material';
+import { Box, Container, Stack, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 function DefaultLayout() {
+  const theme = useTheme();
   return (
-    <Stack height={'100vh'}>
+    <Stack
+      height={'100vh'}
+      sx={{ background: theme.palette.background.paper, transition: 'background 0.3s ease-in-out' }}
+    >
       <Header />
 
-      <Container
+      <Stack
         sx={{
           flex: 1,
           minHeight: 0,
           py: 2,
+          overflowY: 'auto',
         }}
       >
-        <Outlet />
-      </Container>
+        <Container>
+          <Outlet />
+        </Container>
+      </Stack>
     </Stack>
   );
 }

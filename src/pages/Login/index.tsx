@@ -45,22 +45,23 @@ function Login() {
   } = useForm<LoginFormData>();
 
   const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
-    const res = await mUserLogin.mutateAsync(
-      {
-        email: data?.email,
-        password: data?.password,
-      },
-      {
-        onSuccess: (res) => {
-          if (!res?.data?.rows?.id) {
-            enqueueError('Invalid login response data!');
-            return;
-          }
-          setUser(res?.data?.rows);
-          navigate(loginPath);
-        },
-      }
-    );
+    // const res = await mUserLogin.mutateAsync(
+    //   {
+    //     email: data?.email,
+    //     password: data?.password,
+    //   },
+    //   {
+    //     onSuccess: (res) => {
+    //       if (!res?.data?.rows?.id) {
+    //         enqueueError('Invalid login response data!');
+    //         return;
+    //       }
+    //       setUser(res?.data?.rows);
+    //       navigate(loginPath);
+    //     },
+    //   }
+    // );
+    navigate(loginPath);
   };
 
   return (

@@ -18,8 +18,7 @@ if (!themeMode) {
 }
 
 const config: DefaultConfigProps = {
-  // mode: isDarkMode ? 'dark' : 'light',
-  mode: 'light',
+  mode: isDarkMode ? 'dark' : 'light',
   enableTrans: false,
 };
 

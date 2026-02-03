@@ -18,88 +18,59 @@ import NotFound from '~/pages/NotFound';
 
 const publicRoutes: RouteObject[] = [
   {
-    path: '/home',
-    element: <Home />,
-  },
-  {
-    element: <AxiosContext />,
+    element: <DefaultLayout />,
     children: [
       {
-        element: <GuestGuardContext />,
-        children: [
-          {
-            element: <BackgroundLayout />,
-            children: [
-              {
-                path: '/login',
-                element: <Login />,
-              },
-              {
-                path: '/register',
-                element: <Register />,
-              },
-              {
-                path: '/forgot-password',
-                element: <ForgetPassword />,
-              },
-              {
-                path: '/reset-password',
-                element: <ResetPassword />,
-              },
-            ],
-          },
-        ],
+        path: '/home',
+        element: <Home />,
       },
-      // Auth routes
       {
-        element: <AuthGuardContext />,
-        children: [
-          {
-            element: <DefaultLayout />,
-            children: [
-              {
-                path: '/explore',
-                element: <Home />,
-              },
-              {
-                path: '/my-photos',
-                element: <Home />,
-              },
-              {
-                path: '/demo',
-                element: <Demo />,
-                children: demoRoute,
-              },
-              {
-                index: true,
-                element: <Navigate to="/explore" />,
-              },
-            ],
-          },
-          {
-            element: <BackgroundLayout />,
-            children: [
-              {
-                path: '/profile',
-                element: <Profile />,
-              },
-              {
-                path: '/change-password',
-                element: <ChangePassword />,
-              },
-            ],
-          },
-        ],
+        path: '/demo',
+        element: <Demo />,
+        children: demoRoute,
+      },
+      {
+        index: true,
+        element: <Navigate to="/explore" />,
+      },
+    ],
+  },
+  {
+    element: <BackgroundLayout />,
+    children: [
+      {
+        path: '/profile',
+        element: <Profile />,
+      },
+      {
+        path: '/change-password',
+        element: <ChangePassword />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/register',
+        element: <Register />,
+      },
+      {
+        path: '/forgot-password',
+        element: <ForgetPassword />,
+      },
+      {
+        path: '/reset-password',
+        element: <ResetPassword />,
+      },
+      {
+        path: '*',
+        element: <NotFound />,
       },
     ],
   },
   {
     index: true,
     element: <Navigate to="/home" />,
-  },
-  {
-    path: '*',
-    element: <NotFound />,
   },
 ];
 

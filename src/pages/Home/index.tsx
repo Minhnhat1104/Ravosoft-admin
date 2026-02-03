@@ -1,5 +1,5 @@
 import { CalendarMonth, InfoOutline } from '@mui/icons-material';
-import { Alert, Button, Container, Grid, Paper, Stack, Typography } from '@mui/material';
+import { Alert, Button, Container, Grid, Paper, Stack, Typography, useTheme } from '@mui/material';
 import React, { lazy } from 'react';
 import PrimaryStats from './PrimaryStats';
 import SecondaryStats from './SecondaryStats';
@@ -13,8 +13,9 @@ interface HomeProps {}
 export const WIDGET_SPACING = 3;
 
 function Home({}: HomeProps) {
+  const theme = useTheme();
   return (
-    <Container sx={{ p: 2 }}>
+    <>
       {/* <Paper sx={{ width: 1, height: 1, p: 2 }}> */}
       <Stack direction="row" width={1} alignItems="center">
         <Stack>
@@ -63,7 +64,7 @@ function Home({}: HomeProps) {
       </Grid>
 
       {/* </Paper> */}
-    </Container>
+    </>
   );
 }
 

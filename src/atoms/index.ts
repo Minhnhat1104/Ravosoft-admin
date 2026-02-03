@@ -8,5 +8,5 @@ export const userState = atom<User | null>({
 
 export const loginPathState = atom<string>({
   key: 'loginPathAtom',
-  default: '/explore',
+  default: '/home',
 });

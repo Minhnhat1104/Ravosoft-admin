@@ -39,9 +39,6 @@ function Header() {
           // position: 'fixed',
           top: 0,
           zIndex: 1,
-          // boxShadow: `0 3px 6px ${theme.palette.divider}`,
-          background: theme.palette.background.paper,
-          transition: 'background-color 0.3s ease-in-out',
           borderBottom: theme.border.light,
         }}
       >

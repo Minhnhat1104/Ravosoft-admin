@@ -1,12 +1,16 @@
 import Header from '../Header';
 import React from 'react';
-import { Box, Stack } from '@mui/material';
+import { Box, Stack, useTheme } from '@mui/material';
 import background from '~/assets/img/img.jpg';
 import { Outlet } from 'react-router-dom';
 
 function BackgroundLayout({ children }: any) {
+  const theme = useTheme();
   return (
-    <Stack height={'100vh'}>
+    <Stack
+      height={'100vh'}
+      sx={{ background: theme.palette.background.paper, transition: 'background 0.3s ease-in-out' }}
+    >
       <Header />
 
       <Box
@@ -14,11 +18,7 @@ function BackgroundLayout({ children }: any) {
           flex: 1,
           minHeight: 0,
           width: 1,
-          background: `url(${background}) no-repeat center center fixed`,
-          webkitBackgroundSize: 'cover',
-          mozBackgroundSize: 'cover',
-          oBackgroundSize: 'cover',
-          backgroundSize: 'cover',
+          background: theme.palette.primary.main,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
