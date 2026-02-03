@@ -65,7 +65,7 @@ function Header({ isLogin }: HeaderProps) {
           </Link>
           {isLogin ? (
             <>
-              <NavList />
+              {/* <NavList /> */}
               <Stack direction="row" alignItems="center" spacing={1}>
                 <LanguageSelect />
                 <ThemeToggle />
