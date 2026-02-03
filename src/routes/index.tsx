@@ -14,10 +14,11 @@ import ResetPassword from '~/pages/ResetPassword';
 import ChangePassword from '~/pages/ChangePassword';
 import AuthGuardContext from '~/contexts/AuthGuardContext';
 import GuestGuardContext from '~/contexts/GuestGuardContext';
+import NotFound from '~/pages/NotFound';
 
 const publicRoutes: RouteObject[] = [
   {
-    index: true,
+    path: '/home',
     element: <Home />,
   },
   {
@@ -91,6 +92,14 @@ const publicRoutes: RouteObject[] = [
         ],
       },
     ],
+  },
+  {
+    index: true,
+    element: <Navigate to="/home" />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ];
 
