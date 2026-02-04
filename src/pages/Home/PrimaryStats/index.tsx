@@ -1,6 +1,5 @@
-import { Grid } from '@mui/material';
 import React from 'react';
-import Item from './Item';
+
 import {
   CardGiftcardOutlined,
   DescriptionOutlined,
@@ -10,6 +9,10 @@ import {
   RepeatOutlined,
   ShieldOutlined,
 } from '@mui/icons-material';
+import { Grid } from '@mui/material';
+
+import Item from './Item';
+
 
 const PrimaryStats = () => {
   return (

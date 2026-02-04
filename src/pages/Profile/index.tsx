@@ -1,14 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import { Avatar, Button, Grid, Stack, TextField, Typography, useTheme } from '@mui/material';
+import { t } from 'i18next';
 import { type SubmitHandler, useForm } from 'react-hook-form';
-import { validationRegex } from '~/tools/regexs';
+import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
+
+import AvatarWrite from './AvatarWrite';
+
 import { userState } from '~/atoms';
 import { useUserMutation } from '~/hooks/useUserMutation';
-import AvatarWrite from './AvatarWrite';
-import { t } from 'i18next';
 import { LangKey } from '~/lang/langKey';
+import { validationRegex } from '~/tools/regexs';
 
 type ProfileFormData = {
   email: string;

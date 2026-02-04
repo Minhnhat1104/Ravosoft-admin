@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { Box, Stack, SxProps, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 
 import ActionList from './ActionList';
-import { useNavigate } from 'react-router-dom';
+
+import { userState } from '~/atoms';
 import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { COOKIE_KEY, cookieService } from '~/tools/storages';
-import { userState } from '~/atoms';
-import { useRecoilState } from 'recoil';
+
 
 interface ProfileContentProps {
   sx?: SxProps;

@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { CalendarMonth, ShoppingCartOutlined, ViewInArOutlined } from '@mui/icons-material';
 import { Box, Button, Divider, Stack, Typography, useTheme } from '@mui/material';
-import React from 'react';
+
 import Item, { LowStockItem } from './Item';
 
 const items: LowStockItem[] = [

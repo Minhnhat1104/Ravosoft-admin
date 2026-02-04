@@ -1,5 +1,6 @@
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
 import { Stack, SxProps, Typography, useTheme } from '@mui/material';
+
 import { PalleteColor } from '~/themes/types/theme';
 import { formatPercent } from '~/tools';
 

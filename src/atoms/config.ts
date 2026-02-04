@@ -1,4 +1,5 @@
 import { atom } from 'recoil';
+
 import { ThemeMode } from '~/themes/types/config';
 import { LOCAL_STORAGE_KEY, localStorageService } from '~/tools/storages';
 

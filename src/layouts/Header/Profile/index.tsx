@@ -5,8 +5,10 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 // project import
 
-import ProfileContent from './ProfileContent';
 import { useRecoilValue } from 'recoil';
+
+import ProfileContent from './ProfileContent';
+
 import { userState } from '~/atoms';
 import BaseAvatar from '~/components/BaseAvatar';
 

@@ -1,12 +1,14 @@
+import React, { lazy } from 'react';
+
 import { CalendarMonth, InfoOutline } from '@mui/icons-material';
 import { Alert, Button, Container, Grid, Paper, Stack, Typography, useTheme } from '@mui/material';
-import React, { lazy } from 'react';
-import PrimaryStats from './PrimaryStats';
-import SecondaryStats from './SecondaryStats';
-import SalesAndPurchase from './SalesAndPurchase';
-import Overall from './Overall';
-import TopSellingProducts from './TopSellingProducts';
+
 import LowStockProducts from './LowStockProducts';
+import Overall from './Overall';
+import PrimaryStats from './PrimaryStats';
+import SalesAndPurchase from './SalesAndPurchase';
+import SecondaryStats from './SecondaryStats';
+import TopSellingProducts from './TopSellingProducts';
 
 interface HomeProps {}
 

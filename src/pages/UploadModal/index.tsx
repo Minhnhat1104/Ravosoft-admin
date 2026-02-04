@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import React from 'react';
+
 import { Box, Button, InputLabel, Stack, TextField, Typography, useTheme } from '@mui/material';
-import MiModal from '~/components/MiModal';
 import { useQueryClient } from '@tanstack/react-query';
-import { queryKeys } from '~/config/queryKeys';
-import { SET_TIMEOUT } from '~/config/constants';
-import { useRecoilValue } from 'recoil';
-import { userState } from '~/atoms';
 import { Controller, useForm, type SubmitHandler } from 'react-hook-form';
+import { useRecoilValue } from 'recoil';
+
+import { userState } from '~/atoms';
 import ImageDropZone from '~/components/ImageDropZone';
+import MiModal from '~/components/MiModal';
+import { SET_TIMEOUT } from '~/config/constants';
+import { queryKeys } from '~/config/queryKeys';
 import { useAlbumMutation } from '~/hooks/Album/useAlbumMutation';
 
 interface UploadModalProps {

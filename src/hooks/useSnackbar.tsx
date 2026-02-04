@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { toast } from 'react-toastify';
 import { Alert, useTheme } from '@mui/material';
+import { toast } from 'react-toastify';
 
 export const useSnackbar = () => {
   const theme = useTheme();

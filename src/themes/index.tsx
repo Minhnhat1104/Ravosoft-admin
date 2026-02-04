@@ -1,17 +1,17 @@
 import { ReactNode, useMemo } from 'react';
+import React from 'react';
 
 import { CssBaseline, GlobalStyles, StyledEngineProvider } from '@mui/material';
 import { createTheme, Theme, ThemeOptions, ThemeProvider, TypographyVariantsOptions } from '@mui/material/styles';
-
-import { CustomShadowProps } from '~/themes/types/theme';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import componentsOverride from './overrides';
 import Palette from './palette';
 import CustomShadows from './shadows';
 import Typography from './typography';
-import React from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+
 import { configState } from '~/atoms/config';
+import { CustomShadowProps } from '~/themes/types/theme';
 
 type ThemeCustomizationProps = {
   children: ReactNode;

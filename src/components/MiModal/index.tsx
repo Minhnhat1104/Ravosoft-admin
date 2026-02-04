@@ -22,6 +22,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+
 import { ellipsisSx } from "~/tools/style";
 
 interface MiModalProps {

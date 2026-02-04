@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 
+import { CheckCircle, LanguageOutlined } from '@mui/icons-material';
 import {
   Avatar,
   ClickAwayListener,
@@ -15,15 +16,14 @@ import {
   Stack,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-
+import i18next from 'i18next';
+import Flag from 'react-world-flags';
 import { useRecoilValue } from 'recoil';
+
 import { userState } from '~/atoms';
 import { getUserAvatarSrc } from '~/tools/image';
-import { LabelValue } from '~/types';
-import Flag from 'react-world-flags';
-import i18next from 'i18next';
-import { CheckCircle, LanguageOutlined } from '@mui/icons-material';
 import { LOCAL_STORAGE_KEY, localStorageService } from '~/tools/storages';
+import { LabelValue } from '~/types';
 
 interface LanguageOption extends LabelValue {
   countryFlag: string;

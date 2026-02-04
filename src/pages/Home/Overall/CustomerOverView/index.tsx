@@ -1,7 +1,9 @@
+import React from 'react';
+
 import { CalendarMonth } from '@mui/icons-material';
 import { Button, Divider, Grid, Stack, SxProps, Typography, useTheme } from '@mui/material';
 import { Gauge } from '@mui/x-charts';
-import React from 'react';
+
 import Item from './Item';
 
 interface CustomerOverViewProps {

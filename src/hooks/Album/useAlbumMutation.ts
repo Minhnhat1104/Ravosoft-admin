@@ -1,6 +1,7 @@
-import axios from '~/tools/axios';
 import { useMutation } from '@tanstack/react-query';
+
 import { queryKeys } from '~/config/queryKeys';
+import axios from '~/tools/axios';
 
 export const useAlbumMutation = () => {
   const mCreate = useMutation({

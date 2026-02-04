@@ -1,8 +1,10 @@
+import React, { type CSSProperties, useEffect, useMemo } from 'react';
+
 import { Delete, DeleteOutline } from '@mui/icons-material';
 import { Box, IconButton, List, ListItem, Stack, Typography, useTheme } from '@mui/material';
 import { t } from 'i18next';
-import React, { type CSSProperties, useEffect, useMemo } from 'react';
 import { type FileWithPath, useDropzone } from 'react-dropzone';
+
 import { LangKey } from '~/lang/langKey';
 import { ellipsisSx } from '~/tools/style';
 

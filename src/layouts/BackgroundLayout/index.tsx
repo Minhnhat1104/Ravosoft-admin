@@ -1,8 +1,11 @@
-import Header from '../Header';
 import React from 'react';
+
 import { Box, Stack, useTheme } from '@mui/material';
-import background from '~/assets/img/img.jpg';
 import { Outlet } from 'react-router-dom';
+
+import Header from '../Header';
+
+import background from '~/assets/img/img.jpg';
 
 function BackgroundLayout({ children }: any) {
   const theme = useTheme();

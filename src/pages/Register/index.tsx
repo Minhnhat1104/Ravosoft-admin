@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Button, Grid, Stack, TextField, Typography, useTheme } from '@mui/material';
-import { useAuthMutation } from '~/hooks/useAuthMutation';
-import { type SubmitHandler, useForm } from 'react-hook-form';
-import PasswordInput from '~/components/PasswordInput';
+
 import { ArrowBack } from '@mui/icons-material';
+import { Button, Grid, Stack, TextField, Typography, useTheme } from '@mui/material';
 import { t } from 'i18next';
+import { type SubmitHandler, useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+
+import PasswordInput from '~/components/PasswordInput';
+import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { LangKey } from '~/lang/langKey';
 
 type RegisterFormData = {

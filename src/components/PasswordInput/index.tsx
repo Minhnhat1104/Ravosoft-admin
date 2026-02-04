@@ -1,3 +1,5 @@
+import React, { forwardRef, type RefObject, useState } from "react";
+
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   IconButton,
@@ -6,7 +8,6 @@ import {
   type OutlinedInputProps,
   TextField,
 } from "@mui/material";
-import React, { forwardRef, type RefObject, useState } from "react";
 import { type TextFieldProps } from "@mui/material/TextField";
 
 type PasswordInputProps = TextFieldProps;

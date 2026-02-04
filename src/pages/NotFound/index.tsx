@@ -1,5 +1,6 @@
-import { Button, Stack, Typography, useTheme } from '@mui/material';
 import React from 'react';
+
+import { Button, Stack, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {

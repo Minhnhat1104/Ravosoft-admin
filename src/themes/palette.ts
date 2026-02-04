@@ -1,10 +1,11 @@
 import { PalettesProps, presetDarkPalettes, presetPalettes } from '@ant-design/colors';
 import { alpha, createTheme } from '@mui/material/styles';
 
+import ThemeOption from './theme';
+
 import { PresetColor, ThemeMode } from '~/themes/types/config';
 import { PaletteThemeProps } from '~/themes/types/theme';
 
-import ThemeOption from './theme';
 
 const Palette = (mode: ThemeMode, presetColor: PresetColor) => {
   const colors: PalettesProps = mode === 'dark' ? presetDarkPalettes : presetPalettes;

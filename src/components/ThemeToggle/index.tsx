@@ -1,7 +1,9 @@
+import React from 'react';
+
 import { DarkMode, DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { IconButton, Switch } from '@mui/material';
-import React from 'react';
 import { useRecoilState } from 'recoil';
+
 import { configState } from '~/atoms/config';
 import { LOCAL_STORAGE_KEY, localStorageService } from '~/tools/storages';
 

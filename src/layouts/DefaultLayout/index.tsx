@@ -1,7 +1,9 @@
-import Header from '../Header';
 import React from 'react';
+
 import { Box, Container, Stack, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
+
+import Header from '../Header';
 
 function DefaultLayout() {
   const theme = useTheme();

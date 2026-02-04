@@ -1,5 +1,10 @@
 import React, { ErrorInfo, Suspense } from 'react';
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+
+import LoadingCircular from '~/components/LoadingCircular';
+import ToastContext from '~/contexts/ToastContext';
 import publicRoutes from '~/routes';
 
 import '@fontsource/roboto/300.css';
@@ -8,13 +13,15 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import ThemeCustomization from '~/themes';
-import { RecoilRoot } from 'recoil';
+
 import { CssBaseline, Stack, useTheme } from '@mui/material';
+
 import './App.css';
-import ToastContext from '~/contexts/ToastContext';
+
 import { ErrorBoundary } from 'react-error-boundary';
-import LoadingCircular from '~/components/LoadingCircular';
+
 
 // Create a client
 const queryClient = new QueryClient({

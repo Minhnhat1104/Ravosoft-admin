@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { SvgIconComponent } from '@mui/icons-material';
 import { Stack, Typography, useTheme } from '@mui/material';
-import React from 'react';
+
 import { PalleteColor } from '~/themes/types/theme';
 
 interface ItemProps {

@@ -1,17 +1,19 @@
 import React, { ReactNode, useRef, useState } from 'react';
 import { useEffect } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { userState } from '~/atoms';
-import axios from '~/tools/axios';
+
 import { default as originAxios } from 'axios';
 import jwt_decode from 'jwt-decode';
-import { useSnackbar } from '~/hooks/useSnackbar';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import LoadingCircular from '~/components/LoadingCircular';
-import { COOKIE_KEY, cookieService } from '~/tools/storages';
 import { lowerCase } from 'lodash';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useRecoilState, useRecoilValue } from 'recoil';
+
+import { userState } from '~/atoms';
+import LoadingCircular from '~/components/LoadingCircular';
 import { BASE_URL } from '~/config/constants';
+import { useSnackbar } from '~/hooks/useSnackbar';
 import i18n from '~/lang';
+import axios from '~/tools/axios';
+import { COOKIE_KEY, cookieService } from '~/tools/storages';
 
 interface AxiosContextProps {}
 

@@ -1,4 +1,5 @@
 import { Area } from 'react-easy-crop';
+
 import { CROP_AREA_ASPECT } from '.';
 import './style.css';
 

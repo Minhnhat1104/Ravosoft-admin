@@ -1,9 +1,11 @@
 import { Button, Stack } from '@mui/material';
-import { Link, useMatch } from 'react-router-dom';
-import { LabelValue } from '~/types';
-import Item from './Item';
 import { t } from 'i18next';
+import { Link, useMatch } from 'react-router-dom';
+
+import Item from './Item';
+
 import { LangKey } from '~/lang/langKey';
+import { LabelValue } from '~/types';
 
 const items: LabelValue[] = [
   {

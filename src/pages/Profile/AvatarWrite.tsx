@@ -1,17 +1,20 @@
-import { Avatar, Box, Button, Stack, useTheme } from '@mui/material';
 import React, { useCallback, useState } from 'react';
-import { useDropzone } from 'react-dropzone';
-import { useUserMutation } from '~/hooks/useUserMutation';
-import userImagePlaceholder from '~/assets/img/UserPlaceholder.png';
-import { useRecoilState } from 'recoil';
-import { userState } from '~/atoms';
-import { getUserAvatarSrc } from '~/tools/image';
-import { LangKey } from '~/lang/langKey';
-import { t } from 'i18next';
-import BaseAvatar from '~/components/BaseAvatar';
-import AvatarCrop from './AvatarCrop';
+
 import { Edit } from '@mui/icons-material';
+import { Avatar, Box, Button, Stack, useTheme } from '@mui/material';
+import { t } from 'i18next';
+import { useDropzone } from 'react-dropzone';
+import { useRecoilState } from 'recoil';
+
+import AvatarCrop from './AvatarCrop';
+
+import userImagePlaceholder from '~/assets/img/UserPlaceholder.png';
+import { userState } from '~/atoms';
+import BaseAvatar from '~/components/BaseAvatar';
 import ImageButton from '~/components/ImageButton';
+import { useUserMutation } from '~/hooks/useUserMutation';
+import { LangKey } from '~/lang/langKey';
+import { getUserAvatarSrc } from '~/tools/image';
 
 function AvatarWrite() {
   const theme = useTheme();

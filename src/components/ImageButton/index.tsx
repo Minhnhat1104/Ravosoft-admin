@@ -1,7 +1,9 @@
+import React from 'react';
+
 import { Button } from '@mui/material';
 import { t } from 'i18next';
-import React from 'react';
 import { useDropzone } from 'react-dropzone';
+
 import { LangKey } from '~/lang/langKey';
 
 interface ImageButtonProps {

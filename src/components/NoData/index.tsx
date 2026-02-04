@@ -1,7 +1,9 @@
+import React from 'react';
+
 import { Inventory2Outlined } from '@mui/icons-material';
 import { Stack, Typography, useTheme } from '@mui/material';
 import { t } from 'i18next';
-import React from 'react';
+
 import { LangKey } from '~/lang/langKey';
 
 interface NoDataProps {

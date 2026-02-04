@@ -1,20 +1,22 @@
 import React from 'react';
-import Home from '~/pages/Home';
-import Login from '~/pages/Login';
-import Register from '~/pages/Register';
+
+import { Navigate, type RouteObject } from 'react-router-dom';
+
+import AuthGuardContext from '~/contexts/AuthGuardContext';
+import AxiosContext from '~/contexts/AxiosContext';
+import GuestGuardContext from '~/contexts/GuestGuardContext';
 import DefaultLayout from '~/layouts';
 import BackgroundLayout from '~/layouts/BackgroundLayout';
-import { Navigate, type RouteObject } from 'react-router-dom';
-import AxiosContext from '~/contexts/AxiosContext';
+import ChangePassword from '~/pages/ChangePassword';
 import Demo from '~/pages/Demo';
 import { demoRoute } from '~/pages/Demo/demoRoute';
-import Profile from '~/pages/Profile';
 import ForgetPassword from '~/pages/ForgetPassword';
-import ResetPassword from '~/pages/ResetPassword';
-import ChangePassword from '~/pages/ChangePassword';
-import AuthGuardContext from '~/contexts/AuthGuardContext';
-import GuestGuardContext from '~/contexts/GuestGuardContext';
+import Home from '~/pages/Home';
+import Login from '~/pages/Login';
 import NotFound from '~/pages/NotFound';
+import Profile from '~/pages/Profile';
+import Register from '~/pages/Register';
+import ResetPassword from '~/pages/ResetPassword';
 
 const publicRoutes: RouteObject[] = [
   {

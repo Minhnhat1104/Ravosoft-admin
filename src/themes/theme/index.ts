@@ -1,9 +1,10 @@
 import { type PalettesProps } from "@ant-design/colors";
 
+import Default from "./default";
+
 import { type PresetColor, type ThemeMode } from "~/themes/types/config";
 import { type PaletteThemeProps } from "~/themes/types/theme";
 
-import Default from "./default";
 
 const Theme = (
   colors: PalettesProps,

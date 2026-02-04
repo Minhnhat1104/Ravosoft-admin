@@ -1,13 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import { Box, Button, Stack, TextField, Typography, useTheme } from '@mui/material';
-import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { type SubmitHandler, useForm } from 'react-hook-form';
-import PasswordInput from '~/components/PasswordInput';
-import { useSetRecoilState } from 'recoil';
-import { userState } from '~/atoms';
-import { useSnackbar } from '~/hooks/useSnackbar';
+import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
+
+import { userState } from '~/atoms';
+import PasswordInput from '~/components/PasswordInput';
+import { useAuthMutation } from '~/hooks/useAuthMutation';
+import { useSnackbar } from '~/hooks/useSnackbar';
+
 
 type ResetPasswordFormData = {
   password1: string;

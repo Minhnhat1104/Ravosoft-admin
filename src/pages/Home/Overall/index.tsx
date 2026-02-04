@@ -1,8 +1,10 @@
+import React from 'react';
+
 import { GroupOutlined, InfoOutline, ShoppingCartOutlined, VerifiedUserOutlined } from '@mui/icons-material';
 import { Box, Grid, Stack, Typography, useTheme } from '@mui/material';
-import React from 'react';
-import Item from './Item';
+
 import CustomerOverView from './CustomerOverView';
+import Item from './Item';
 
 interface OverallProps {}
 

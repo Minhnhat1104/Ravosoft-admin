@@ -1,12 +1,17 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import MiModal from '~/components/MiModal';
-import Cropper, { Area } from 'react-easy-crop';
+
 import { Box, Button, Grid, Slider, Stack, Typography } from '@mui/material';
-import Output from './Output';
-import ImageButton from '~/components/ImageButton';
-import { useUserMutation } from '~/hooks/useUserMutation';
-import { getCroppedImgFile, getCroppedImgURL, ImageInfo } from './helper';
 import _ from 'lodash';
+import Cropper, { Area } from 'react-easy-crop';
+
+import { getCroppedImgFile, getCroppedImgURL, ImageInfo } from './helper';
+import Output from './Output';
+
+import ImageButton from '~/components/ImageButton';
+import MiModal from '~/components/MiModal';
+import { useUserMutation } from '~/hooks/useUserMutation';
+
+
 
 interface AvatarCropProps {
   isOpen: boolean;
