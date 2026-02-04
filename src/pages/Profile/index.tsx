@@ -6,12 +6,13 @@ import { type SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import AvatarWrite from './AvatarWrite';
 
 import { userState } from '~/atoms';
 import { useUserMutation } from '~/hooks/useUserMutation';
 import { LangKey } from '~/lang/langKey';
 import { validationRegex } from '~/tools/regexs';
+
+import AvatarWrite from './AvatarWrite';
 
 type ProfileFormData = {
   email: string;

@@ -6,8 +6,6 @@ import { t } from 'i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import NavList from './NavList';
-import Profile from './Profile';
 
 import logo from '~/assets/img/favicon.ico';
 import { userState } from '~/atoms';
@@ -17,6 +15,9 @@ import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { LangKey } from '~/lang/langKey';
 import UploadModal from '~/pages/UploadModal';
 import { COOKIE_KEY, cookieService } from '~/tools/storages';
+
+import NavList from './NavList';
+import Profile from './Profile';
 
 
 

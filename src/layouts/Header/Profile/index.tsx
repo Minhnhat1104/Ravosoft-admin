@@ -2,15 +2,13 @@ import { useRef, useState } from 'react';
 
 import { Avatar, Box, ButtonBase, ClickAwayListener, Fade, IconButton, Paper, Popper, Stack } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
-
-// project import
-
 import { useRecoilValue } from 'recoil';
 
-import ProfileContent from './ProfileContent';
 
 import { userState } from '~/atoms';
 import BaseAvatar from '~/components/BaseAvatar';
+
+import ProfileContent from './ProfileContent';
 
 const Profile = () => {
   const theme = useTheme();

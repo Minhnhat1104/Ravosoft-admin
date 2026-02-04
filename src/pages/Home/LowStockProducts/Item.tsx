@@ -1,10 +1,11 @@
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
 import { Box, Stack, SxProps, Typography, useTheme } from '@mui/material';
 
-import productImg from './product-06.webp';
 
 import { PalleteColor } from '~/themes/types/theme';
 import { formatPercent } from '~/tools';
+
+import productImg from './product-06.webp';
 
 export interface LowStockItem {
   label: string;

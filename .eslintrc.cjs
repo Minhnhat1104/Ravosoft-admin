@@ -51,7 +51,7 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: '@/**',
+            pattern: '~/**',
             group: 'internal',
           },
         ],
@@ -60,7 +60,16 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     'react/react-in-jsx-scope': 'off',
+    'no-useless-escape': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'react/no-unescaped-entities': 'off',
+    'no-empty-pattern': 'off',
+  },
+
+  env: {
+    jest: true,
   },
 
   settings: {

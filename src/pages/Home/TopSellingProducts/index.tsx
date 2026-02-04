@@ -77,7 +77,7 @@ const TopSellingProducts = () => {
       {/* Body */}
       <Stack sx={{ width: 1 }} divider={<Divider sx={{ borderColor: theme.border.main }} />}>
         {items?.map((_item) => (
-          <Item {..._item} />
+          <Item key={_item?.label} {..._item} />
         ))}
       </Stack>
     </Stack>

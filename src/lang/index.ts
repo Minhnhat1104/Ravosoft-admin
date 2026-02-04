@@ -4,10 +4,11 @@ import i18n from 'i18next';
 import { createRoot } from 'react-dom/client';
 import { useTranslation, initReactI18next } from 'react-i18next';
 
+import { LOCAL_STORAGE_KEY, localStorageService } from '~/tools/storages';
+
 import { langEn } from './en';
 import { langVi } from './vi';
 
-import { LOCAL_STORAGE_KEY, localStorageService } from '~/tools/storages';
 
 let lang = 'en';
 const browserLanguage = navigator.language;

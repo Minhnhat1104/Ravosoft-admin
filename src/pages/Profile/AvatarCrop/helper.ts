@@ -114,7 +114,9 @@ export const getCroppedImgURL = async (opts: ImageInfo) => {
     const blob = await getCroppedImgBlob(opts);
 
     return blob ? URL.createObjectURL(blob) : '';
-  } catch (e) {}
+  } catch (e) {
+    console.log('Error:', e);
+  }
 };
 export const getCroppedImgFile = async (opts: ImageInfo) => {
   const blob = await getCroppedImgBlob(opts);

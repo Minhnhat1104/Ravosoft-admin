@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "lint:fix": "eslint --cache --fix \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "npx eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "test:typescript": "tsc -p tsconfig.app.json --noEmit"
   },
   "dependencies": {
