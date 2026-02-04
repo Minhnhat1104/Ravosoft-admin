@@ -4,7 +4,6 @@ import { Avatar, Box, ButtonBase, ClickAwayListener, Fade, IconButton, Paper, Po
 import { alpha, useTheme } from '@mui/material/styles';
 import { useRecoilValue } from 'recoil';
 
-
 import { userState } from '~/atoms';
 import BaseAvatar from '~/components/BaseAvatar';
 
@@ -32,8 +31,9 @@ const Profile = () => {
         aria-controls={open ? 'profile-grow' : undefined}
         aria-haspopup="true"
         onClick={handleToggle}
+        size="small"
       >
-        <BaseAvatar id={user?.id} name={user?.first_name} />
+        <BaseAvatar id={user?.id} name={user?.first_name} size="small" />
       </IconButton>
 
       <Popper open={open} anchorEl={anchorRef?.current} transition placement="bottom-end" sx={{ zIndex: 1 }}>

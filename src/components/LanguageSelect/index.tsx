@@ -58,8 +58,8 @@ const LanguageSelect = () => {
 
   return (
     <>
-      <IconButton ref={anchorRef} onClick={handleToggle}>
-        <LanguageOutlined />
+      <IconButton ref={anchorRef} onClick={handleToggle} size="small">
+        <LanguageOutlined fontSize="small" />
       </IconButton>
 
       <Popper open={open} anchorEl={anchorRef?.current} transition placement="bottom-start" sx={{ zIndex: 1 }}>

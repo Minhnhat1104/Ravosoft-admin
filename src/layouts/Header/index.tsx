@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 
-import { ImageOutlined, UploadOutlined } from '@mui/icons-material';
-import { Box, Button, Container, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import { ImageOutlined, SearchOffOutlined, SearchOutlined, UploadOutlined } from '@mui/icons-material';
+import {
+  Box,
+  Button,
+  Container,
+  IconButton,
+  InputAdornment,
+  Stack,
+  TextField,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import { t } from 'i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-
 
 import logo from '~/assets/img/favicon.ico';
 import { userState } from '~/atoms';
@@ -16,10 +25,7 @@ import { LangKey } from '~/lang/langKey';
 import UploadModal from '~/pages/UploadModal';
 import { COOKIE_KEY, cookieService } from '~/tools/storages';
 
-import NavList from './NavList';
 import Profile from './Profile';
-
-
 
 interface HeaderProps {
   isLogin?: boolean;
@@ -45,50 +51,49 @@ function Header({ isLogin }: HeaderProps) {
         px={2}
         sx={{
           width: '100%',
-          height: 80,
+          height: 64,
           // position: 'fixed',
           top: 0,
           zIndex: 1,
           borderBottom: theme.border.light,
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
-        <Container
-          sx={{
-            margin: 'auto',
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
+        <TextField
+          variant="outlined"
+          placeholder="Search for results"
+          size="small"
+          slotProps={{
+            input: {
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchOutlined fontSize="small" />
+                </InputAdornment>
+              ),
+            },
           }}
-        >
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <Stack direction="row" alignItems="center" spacing={1} height={'100%'}>
-              <img style={{ width: 40, height: 40 }} src={logo} alt="Logo" />
-              <Typography fontWeight="500" fontSize={24}>
-                Photohub
-              </Typography>
-            </Stack>
-          </Link>
-          {isLogin ? (
-            <>
-              {/* <NavList /> */}
-              <Stack direction="row" alignItems="center" spacing={1}>
-                <LanguageSelect />
-                <ThemeToggle />
-                <Profile />
-              </Stack>
-            </>
-          ) : (
+          sx={{ mr: 'auto' }}
+        />
+
+        {isLogin ? (
+          <>
             <Stack direction="row" alignItems="center" spacing={1}>
               <LanguageSelect />
               <ThemeToggle />
-
-              <Button component={Link} variant="contained" to="/login">
-                {t(LangKey.join)}
-              </Button>
+              <Profile />
             </Stack>
-          )}
-        </Container>
+          </>
+        ) : (
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <LanguageSelect />
+            <ThemeToggle />
+
+            <Button component={Link} variant="contained" to="/login" size="small">
+              {t(LangKey.join)}
+            </Button>
+          </Stack>
+        )}
       </Box>
 
       {openWrite && <UploadModal isOpen={openWrite} onClose={() => setOpenWrite(false)} />}

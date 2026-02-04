@@ -18,8 +18,8 @@ const ThemeToggle = () => {
 
   return (
     <>
-      <IconButton onClick={toggleTheme}>
-        {config?.mode === 'dark' ? <DarkModeOutlined /> : <LightModeOutlined />}
+      <IconButton onClick={toggleTheme} size="small">
+        {config?.mode === 'dark' ? <DarkModeOutlined fontSize="small" /> : <LightModeOutlined fontSize="small" />}
       </IconButton>
     </>
   );
