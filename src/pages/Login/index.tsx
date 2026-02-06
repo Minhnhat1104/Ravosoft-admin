@@ -44,7 +44,12 @@ function Login() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<LoginFormData>();
+  } = useForm<LoginFormData>({
+    defaultValues: {
+      email: 'ravosoft@gmail.com',
+      password: 'yakiniku',
+    },
+  });
 
   const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
     // const res = await mUserLogin.mutateAsync(
