@@ -3,6 +3,7 @@ import React from 'react';
 import { Stack } from '@mui/material';
 
 import Logo from './Logo';
+import NestedList from './NestList';
 
 const Sidebar = () => {
   return (
@@ -12,6 +13,7 @@ const Sidebar = () => {
       }}
     >
       <Logo />
+      <NestedList sx={{ flex: 1, minHeight: 0 }} />
     </Stack>
   );
 };
