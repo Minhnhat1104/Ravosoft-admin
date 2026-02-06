@@ -54,18 +54,17 @@ function ResetPassword() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ width: 'fit-content' }}>
+    <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
       <Stack
         sx={{
           background: theme.palette.background.paper,
           p: 3,
           borderRadius: 3,
-          width: 600,
         }}
         spacing={3}
       >
         <Typography variant="h1" fontWeight={500} textAlign="center">
-          Set new password
+          Change password
         </Typography>
 
         <PasswordInput
