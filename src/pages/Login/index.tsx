@@ -67,13 +67,13 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ width: 'fit-content' }}>
+    <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
       <Stack
         sx={{
           background: theme.palette.background.paper,
           p: 3,
           borderRadius: 3,
-          width: 600,
+          width: 1,
         }}
       >
         <Typography variant="h1" fontWeight={500} textAlign="center" mb={3}>

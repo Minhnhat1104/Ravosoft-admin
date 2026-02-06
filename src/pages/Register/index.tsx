@@ -47,78 +47,75 @@ function Register() {
   };
 
   return (
-    <section>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Stack
-          sx={{
-            background: theme.palette.background.paper,
-            p: 3,
-            borderRadius: 3,
-            width: 600,
-          }}
-          spacing={3}
-        >
-          <Typography variant="h1" fontWeight={500} textAlign="center">
-            {t(LangKey.register)}
-          </Typography>
-          <Grid container spacing={3}>
-            <Grid size={6}>
-              <TextField
-                fullWidth
-                size="medium"
-                label={t(LangKey.firstName)}
-                helperText={errors.firstName?.message}
-                error={!!errors.firstName}
-                {...register('firstName', { required: true, maxLength: 50 })}
-              />
-            </Grid>
-            <Grid size={6}>
-              <TextField
-                fullWidth
-                size="medium"
-                label={t(LangKey.lastName)}
-                helperText={errors.lastName?.message}
-                error={!!errors.lastName}
-                {...register('lastName', { required: true, maxLength: 50 })}
-              />
-            </Grid>
+    <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+      <Stack
+        sx={{
+          background: theme.palette.background.paper,
+          p: 3,
+          borderRadius: 3,
+        }}
+        spacing={3}
+      >
+        <Typography variant="h1" fontWeight={500} textAlign="center">
+          {t(LangKey.register)}
+        </Typography>
+        <Grid container spacing={3}>
+          <Grid size={6}>
+            <TextField
+              fullWidth
+              size="medium"
+              label={t(LangKey.firstName)}
+              helperText={errors.firstName?.message}
+              error={!!errors.firstName}
+              {...register('firstName', { required: true, maxLength: 50 })}
+            />
           </Grid>
-          <TextField
-            fullWidth
-            size="medium"
-            label="Email"
-            helperText={errors.email?.message}
-            error={!!errors.email}
-            type={t(LangKey.email)}
-            // placeholder="Enter your email"
-            {...register('email', {
-              required: true,
-              pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-            })}
-          />
-          <PasswordInput
-            label={t(LangKey.password)}
-            helperText={errors.password?.message}
-            error={!!errors.password}
-            {...register('password', { required: true, maxLength: 50 })}
-          />
-          <Button type="submit" variant="contained" loading={mRegisterUser.isPending}>
-            {t(LangKey.createAccount)}
-          </Button>
-          <Stack
-            direction="row"
-            alignItems="center"
-            component={Link}
-            to={'/pages/sign-in'}
-            justifyContent="center"
-            color="primary.main"
-          >
-            <ArrowBack fontSize="small" sx={{ mr: 1 }} />
-            <Typography>{t(LangKey.backToLogin)}</Typography>
-          </Stack>
+          <Grid size={6}>
+            <TextField
+              fullWidth
+              size="medium"
+              label={t(LangKey.lastName)}
+              helperText={errors.lastName?.message}
+              error={!!errors.lastName}
+              {...register('lastName', { required: true, maxLength: 50 })}
+            />
+          </Grid>
+        </Grid>
+        <TextField
+          fullWidth
+          size="medium"
+          label="Email"
+          helperText={errors.email?.message}
+          error={!!errors.email}
+          type={t(LangKey.email)}
+          // placeholder="Enter your email"
+          {...register('email', {
+            required: true,
+            pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+          })}
+        />
+        <PasswordInput
+          label={t(LangKey.password)}
+          helperText={errors.password?.message}
+          error={!!errors.password}
+          {...register('password', { required: true, maxLength: 50 })}
+        />
+        <Button type="submit" variant="contained" loading={mRegisterUser.isPending}>
+          {t(LangKey.createAccount)}
+        </Button>
+        <Stack
+          direction="row"
+          alignItems="center"
+          component={Link}
+          to={'/pages/sign-in'}
+          justifyContent="center"
+          color="primary.main"
+        >
+          <ArrowBack fontSize="small" sx={{ mr: 1 }} />
+          <Typography>{t(LangKey.backToLogin)}</Typography>
         </Stack>
-      </form>
-    </section>
+      </Stack>
+    </form>
   );
 }
 
