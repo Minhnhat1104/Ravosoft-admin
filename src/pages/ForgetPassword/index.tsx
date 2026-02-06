@@ -75,7 +75,7 @@ function ForgetPassword() {
           direction="row"
           alignItems="center"
           component={Link}
-          to={'/login'}
+          to={'/pages/sign-in'}
           justifyContent="center"
           color="primary.main"
         >

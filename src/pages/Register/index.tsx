@@ -39,11 +39,11 @@ function Register() {
     //   },
     //   {
     //     onSuccess: () => {
-    //       navigate('/login');
+    //       navigate('/pages/sign-in');
     //     },
     //   }
     // );
-    navigate('/login');
+    navigate('/pages/sign-in');
   };
 
   return (
@@ -109,7 +109,7 @@ function Register() {
             direction="row"
             alignItems="center"
             component={Link}
-            to={'/login'}
+            to={'/pages/sign-in'}
             justifyContent="center"
             color="primary.main"
           >

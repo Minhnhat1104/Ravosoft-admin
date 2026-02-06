@@ -17,7 +17,7 @@ const AuthGuardContext = () => {
   }, [user]);
 
   if (!user) {
-    return <Navigate to={'/login'} />;
+    return <Navigate to={'/pages/sign-in'} />;
   }
 
   return (

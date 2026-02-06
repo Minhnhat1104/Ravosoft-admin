@@ -4,13 +4,11 @@ import { Box, Stack, SxProps, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-
 import { userState } from '~/atoms';
 import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { COOKIE_KEY, cookieService } from '~/tools/storages';
 
 import ActionList from './ActionList';
-
 
 interface ProfileContentProps {
   sx?: SxProps;
@@ -28,7 +26,7 @@ const ProfileContent = (props: ProfileContentProps) => {
     // await mUserLogout.mutateAsync({});
     // setUser(null);
     // cookieService.remove(COOKIE_KEY.REFRESH_TOKEN);
-    navigate('/login');
+    navigate('/pages/sign-in');
   };
 
   return (

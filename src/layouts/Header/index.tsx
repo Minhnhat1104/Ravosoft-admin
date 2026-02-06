@@ -42,7 +42,7 @@ function Header({ isLogin }: HeaderProps) {
     await mUserLogout.mutateAsync({});
     setUser(null);
     cookieService.remove(COOKIE_KEY.REFRESH_TOKEN);
-    navigate('/login');
+    navigate('/pages/sign-in');
   };
 
   return (
@@ -89,7 +89,7 @@ function Header({ isLogin }: HeaderProps) {
             <LanguageSelect />
             <ThemeToggle />
 
-            <Button component={Link} variant="contained" to="/login" size="small">
+            <Button component={Link} variant="contained" to="/pages/sign-in" size="small">
               {t(LangKey.join)}
             </Button>
           </Stack>

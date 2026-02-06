@@ -26,7 +26,6 @@ import { useSnackbar } from '~/hooks/useSnackbar';
 // import { t } from 'i18next';
 import { LangKey } from '~/lang/langKey';
 
-
 type LoginFormData = {
   email: string;
   password: string;
@@ -102,7 +101,7 @@ function Login() {
             <Typography
               color={theme.palette.primary.main}
               component={Link}
-              to="/forgot-password"
+              to="/pages/forgot-password"
               sx={{ textAlign: 'right' }}
             >
               {t(LangKey.forgotPassword)}
@@ -128,7 +127,7 @@ function Login() {
         <Stack direction="row" spacing={1} alignItems="center" justifyContent="center" mt={3}>
           <Typography>{t(LangKey.DontHaveAccounYet)}</Typography>
 
-          <Typography color={theme.palette.primary.main} component={Link} to="/register">
+          <Typography color={theme.palette.primary.main} component={Link} to="/pages/sign-up">
             {t(LangKey.RegisterOneForFree)}
           </Typography>
         </Stack>

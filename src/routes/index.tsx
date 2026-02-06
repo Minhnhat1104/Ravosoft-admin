@@ -45,19 +45,19 @@ const publicRoutes: RouteObject[] = [
         element: <ChangePassword />,
       },
       {
-        path: '/login',
+        path: '/pages/sign-in',
         element: <Login />,
       },
       {
-        path: '/register',
+        path: '/pages/sign-up',
         element: <Register />,
       },
       {
-        path: '/forgot-password',
+        path: '/pages/forgot-password',
         element: <ForgetPassword />,
       },
       {
-        path: '/reset-password',
+        path: '/pages/reset-password',
         element: <ResetPassword />,
       },
       {

@@ -43,7 +43,7 @@ const AxiosContext = ({}: AxiosContextProps) => {
       (err) => {
         if (err?.response?.status === 401) {
           console.error('Login expired:', err);
-          navigate('/login');
+          navigate('/pages/sign-in');
           setUser(null);
         }
         if (err?.response?.data?.msg) {

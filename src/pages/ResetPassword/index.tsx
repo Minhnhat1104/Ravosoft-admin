@@ -11,7 +11,6 @@ import PasswordInput from '~/components/PasswordInput';
 import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { useSnackbar } from '~/hooks/useSnackbar';
 
-
 type ResetPasswordFormData = {
   password1: string;
   password2: string;
@@ -94,7 +93,7 @@ function ResetPassword() {
         <Button
           variant="text"
           onClick={() => {
-            navigate('/login');
+            navigate('/pages/sign-in');
           }}
         >
           Back to login
