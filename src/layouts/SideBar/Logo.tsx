@@ -18,9 +18,9 @@ const Logo = () => {
       height={64}
       sx={{ borderBottom: theme.border.light, textDecoration: 'none !important' }}
     >
-      <img style={{ width: 40, height: 40 }} src={logo} alt="Logo" />
+      {/* <img style={{ width: 40, height: 40 }} src={logo} alt="Logo" /> */}
       <Typography fontWeight="500" fontSize={24}>
-        Photohub
+        Ravosoft
       </Typography>
     </Stack>
   );

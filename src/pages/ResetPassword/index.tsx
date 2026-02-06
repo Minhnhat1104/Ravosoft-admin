@@ -53,11 +53,6 @@ function ResetPassword() {
     // );
   };
 
-  if (!resetToken) {
-    throw new Error('Invalid URL');
-    return;
-  }
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ width: 'fit-content' }}>
       <Stack
