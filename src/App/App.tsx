@@ -15,6 +15,7 @@ import { RecoilRoot } from 'recoil';
 
 import LoadingCircular from '~/components/LoadingCircular';
 import ToastContext from '~/contexts/ToastContext';
+import ErrorFallback from '~/pages/ErrorFallback';
 import publicRoutes from '~/routes';
 import ThemeCustomization from '~/themes';
 
@@ -32,25 +33,19 @@ function App() {
   const theme = useTheme();
 
   return (
-    <Suspense fallback={<LoadingCircular fullHeight />}>
-      <ErrorBoundary
-        fallbackRender={({ error, resetErrorBoundary }) => (
-          <div role="alert">
-            <p>Something went wrong:</p>
-            <pre style={{ color: 'red' }}>{error.message}</pre>
-            <button onClick={resetErrorBoundary}>Retry</button>
-          </div>
-        )}
-        onReset={(details) => {
-          // Reset the state of your app so the error doesn't happen again
-        }}
-        onError={(error: Error, info: ErrorInfo) => {
-          console.log('🚀 ~ App ~ info:', info);
-          console.log('🚀 ~ App ~ error:', error);
-        }}
-      >
-        <RecoilRoot>
-          <ThemeCustomization>
+    <ErrorBoundary
+      fallbackRender={({ error, resetErrorBoundary }) => <ErrorFallback code={500} message={error.message} />}
+      onReset={(details) => {
+        // Reset the state of your app so the error doesn't happen again
+      }}
+      onError={(error: Error, info: ErrorInfo) => {
+        console.log('🚀 ~ App ~ info:', info);
+        console.log('🚀 ~ App ~ error:', error);
+      }}
+    >
+      <RecoilRoot>
+        <ThemeCustomization>
+          <Suspense fallback={<LoadingCircular fullHeight sx={{ height: '100vh' }} />}>
             <Stack sx={{ width: 1, height: '100vh', background: theme.palette.grey[100], overflowY: 'auto' }}>
               <CssBaseline />
               <ToastContext>
@@ -60,10 +55,10 @@ function App() {
                 </QueryClientProvider>
               </ToastContext>
             </Stack>
-          </ThemeCustomization>
-        </RecoilRoot>
-      </ErrorBoundary>
-    </Suspense>
+          </Suspense>
+        </ThemeCustomization>
+      </RecoilRoot>
+    </ErrorBoundary>
   );
 }
 

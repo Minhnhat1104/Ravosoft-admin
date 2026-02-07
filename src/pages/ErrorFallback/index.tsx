@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 
 interface ErrorFallback {
   code: number;
+  message?: string;
 }
 
-const ErrorFallback = ({ code }: ErrorFallback) => {
+const ErrorFallback = ({ code, message }: ErrorFallback) => {
   const theme = useTheme();
   return (
     <Stack
@@ -23,12 +24,20 @@ const ErrorFallback = ({ code }: ErrorFallback) => {
       <Typography variant="h1" mb={2}>
         <span style={{ fontSize: 105 }}>404</span> error
       </Typography>
-      <Typography variant="h2" sx={{ fontWeight: 500, mb: 1 }}>
-        Oops. The page you were looking for doesn't exist.
-      </Typography>
-      <Typography variant="h6" sx={{ opacity: 0.6 }}>
-        You may have mistyped the address or the page may have moved.
-      </Typography>
+      {message ? (
+        <Typography variant="h2" sx={{ fontWeight: 500, mb: 1 }}>
+          {message}
+        </Typography>
+      ) : (
+        <>
+          <Typography variant="h2" sx={{ fontWeight: 500, mb: 1 }}>
+            Oops. The page you were looking for doesn't exist.
+          </Typography>
+          <Typography variant="h6" sx={{ opacity: 0.6 }}>
+            You may have mistyped the address or the page may have moved.
+          </Typography>
+        </>
+      )}
       <Button component={Link} color="secondary" variant="contained" sx={{ mt: 3 }} to="/home">
         Back to Home
       </Button>

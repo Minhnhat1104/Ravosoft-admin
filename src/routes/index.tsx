@@ -7,7 +7,7 @@ import AxiosContext from '~/contexts/AxiosContext';
 import GuestGuardContext from '~/contexts/GuestGuardContext';
 import { demoRoute } from '~/pages/Demo/demoRoute';
 import ErrorFallback from '~/pages/ErrorFallback';
-const DefaultLayout = lazy(() => import('~/layouts'));
+const DefaultLayout = lazy(() => import('~/layouts/DefaultLayout'));
 const BackgroundLayout = lazy(() => import('~/layouts/BackgroundLayout'));
 const ChangePassword = lazy(() => import('~/pages/ChangePassword'));
 const Demo = lazy(() => import('~/pages/Demo'));
