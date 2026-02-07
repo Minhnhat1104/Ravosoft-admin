@@ -9,6 +9,7 @@ import { useSetRecoilState } from 'recoil';
 
 import { userState } from '~/atoms';
 import PasswordInput from '~/components/PasswordInput';
+import { CENTER_BOX_PADDING } from '~/config/constants';
 import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { useSnackbar } from '~/hooks/useSnackbar';
 import { useUserMutation } from '~/hooks/useUserMutation';
@@ -54,7 +55,7 @@ function ChangePassword() {
       <Stack
         sx={{
           background: theme.palette.background.paper,
-          p: 3,
+          p: CENTER_BOX_PADDING,
           borderRadius: 3,
           width: 600,
         }}

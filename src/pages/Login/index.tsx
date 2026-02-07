@@ -20,7 +20,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { loginPathState, userState } from '~/atoms';
 import PasswordInput from '~/components/PasswordInput';
-import { BASE_URL } from '~/config/constants';
+import { BASE_URL, CENTER_BOX_PADDING } from '~/config/constants';
 import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { useSnackbar } from '~/hooks/useSnackbar';
 // import { t } from 'i18next';
@@ -76,7 +76,7 @@ function Login() {
       <Stack
         sx={{
           background: theme.palette.background.paper,
-          p: 3,
+          p: CENTER_BOX_PADDING,
           borderRadius: 3,
           width: 1,
         }}

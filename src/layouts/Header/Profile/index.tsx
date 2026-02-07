@@ -33,7 +33,7 @@ const Profile = () => {
         onClick={handleToggle}
         size="small"
       >
-        <BaseAvatar id={user?.id} name={user?.first_name} size="small" />
+        <BaseAvatar name={user?.first_name} />
       </IconButton>
 
       <Popper open={open} anchorEl={anchorRef?.current} transition placement="bottom-end" sx={{ zIndex: 1 }}>

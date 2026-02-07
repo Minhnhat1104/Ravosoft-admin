@@ -7,6 +7,7 @@ import { type SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
 import PasswordInput from '~/components/PasswordInput';
+import { CENTER_BOX_PADDING } from '~/config/constants';
 import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { LangKey } from '~/lang/langKey';
 
@@ -51,7 +52,7 @@ function Register() {
       <Stack
         sx={{
           background: theme.palette.background.paper,
-          p: 3,
+          p: CENTER_BOX_PADDING,
           borderRadius: 3,
         }}
         spacing={3}

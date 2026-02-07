@@ -6,8 +6,8 @@ import { type SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-
 import { userState } from '~/atoms';
+import { CENTER_BOX_PADDING } from '~/config/constants';
 import { useUserMutation } from '~/hooks/useUserMutation';
 import { LangKey } from '~/lang/langKey';
 import { validationRegex } from '~/tools/regexs';
@@ -70,7 +70,7 @@ function Profile() {
       <Stack
         sx={{
           background: theme.palette.background.paper,
-          p: 3,
+          p: CENTER_BOX_PADDING,
           borderRadius: 3,
           width: 600,
         }}

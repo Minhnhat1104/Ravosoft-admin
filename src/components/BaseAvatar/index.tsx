@@ -3,6 +3,7 @@ import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
+import face1 from '~/assets/img/face-1.jpg';
 import { getUserAvatarSrc } from '~/tools/image';
 
 function stringToColor(string: string) {
@@ -27,7 +28,7 @@ function stringToColor(string: string) {
 
 interface BaseAvatarProps {
   name: string | undefined;
-  id: string | number | undefined;
+  src?: string;
   size?: 'small' | 'medium' | 'large' | 'extra-large' | number;
 }
 
@@ -38,11 +39,11 @@ const sizeMap = {
   'extra-large': 48,
 };
 
-const BaseAvatar = ({ id, name, size = 'medium' }: BaseAvatarProps) => {
+const BaseAvatar = ({ src = face1, name, size = 'medium' }: BaseAvatarProps) => {
   return (
     <Avatar
       alt={name}
-      src={getUserAvatarSrc(id || '')}
+      src={src}
       sx={{
         width: typeof size === 'number' ? size : sizeMap[size],
         height: typeof size === 'number' ? size : sizeMap[size],

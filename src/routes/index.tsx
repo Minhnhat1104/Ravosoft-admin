@@ -7,8 +7,11 @@ import AxiosContext from '~/contexts/AxiosContext';
 import GuestGuardContext from '~/contexts/GuestGuardContext';
 import { demoRoute } from '~/pages/Demo/demoRoute';
 import ErrorFallback from '~/pages/ErrorFallback';
+
 const DefaultLayout = lazy(() => import('~/layouts/DefaultLayout'));
 const BackgroundLayout = lazy(() => import('~/layouts/BackgroundLayout'));
+
+const Lockscreen = lazy(() => import('~/pages/Lockscreen'));
 const ChangePassword = lazy(() => import('~/pages/ChangePassword'));
 const Demo = lazy(() => import('~/pages/Demo'));
 const ForgetPassword = lazy(() => import('~/pages/ForgetPassword'));
@@ -60,6 +63,10 @@ const publicRoutes: RouteObject[] = [
       {
         path: '/pages/reset-password',
         element: <ResetPassword />,
+      },
+      {
+        path: '/pages/lockscreen',
+        element: <Lockscreen />,
       },
     ],
   },
