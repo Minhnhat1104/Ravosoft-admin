@@ -22,7 +22,7 @@ const ErrorFallback = ({ code, message }: ErrorFallback) => {
       }}
     >
       <Typography variant="h1" mb={2}>
-        <span style={{ fontSize: 105 }}>404</span> error
+        <span style={{ fontSize: 105 }}>{code}</span> error
       </Typography>
       {message ? (
         <Typography variant="h2" sx={{ fontWeight: 500, mb: 1 }}>

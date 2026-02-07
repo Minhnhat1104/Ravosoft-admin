@@ -75,7 +75,7 @@ const publicRoutes: RouteObject[] = [
         element: <ErrorFallback code={500} />,
       },
       {
-        path: '/pages/401-error',
+        path: '/pages/501-error',
         element: <ErrorFallback code={501} />,
       },
       {
