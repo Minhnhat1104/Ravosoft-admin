@@ -116,6 +116,12 @@ export const sidebarItems: NavItem[] = [
               },
             ],
           },
+          {
+            label: 'About Us',
+            id: 'about-us',
+            type: 'leaf',
+            url: '/pages/about-us',
+          },
         ],
       },
     ],

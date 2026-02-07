@@ -64,3 +64,7 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+img {
+  max-width: 100%;
+}

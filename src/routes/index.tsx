@@ -5,6 +5,7 @@ import { Navigate, type RouteObject } from 'react-router-dom';
 import AuthGuardContext from '~/contexts/AuthGuardContext';
 import AxiosContext from '~/contexts/AxiosContext';
 import GuestGuardContext from '~/contexts/GuestGuardContext';
+import AboutUs from '~/pages/AboutUs';
 import { demoRoute } from '~/pages/Demo/demoRoute';
 import ErrorFallback from '~/pages/ErrorFallback';
 
@@ -40,6 +41,10 @@ const publicRoutes: RouteObject[] = [
         path: '/demo',
         element: <Demo />,
         children: demoRoute,
+      },
+      {
+        path: '/pages/about-us',
+        element: <AboutUs />,
       },
     ],
   },
