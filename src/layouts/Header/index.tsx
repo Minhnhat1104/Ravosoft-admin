@@ -73,7 +73,7 @@ function Header({ isLogin }: HeaderProps) {
               ),
             },
           }}
-          sx={{ mr: 'auto' }}
+          sx={{ mr: 'auto', width: 500 }}
         />
 
         {isLogin ? (

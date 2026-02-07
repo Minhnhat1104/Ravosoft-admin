@@ -74,7 +74,7 @@ const Palette = (mode: ThemeMode, presetColor: PresetColor) => {
       background: {
         paper: mode === 'dark' ? paletteColor.grey[100] : paletteColor.grey[0],
         default: mode === 'dark' ? paletteColor.grey[100] : paletteColor.grey[0],
-        softGrey: mode === 'dark' ? paletteColor.grey[300] : paletteColor.grey[50],
+        softGrey: mode === 'dark' ? paletteColor.grey[100] : paletteColor.grey[50],
       },
     },
   });
