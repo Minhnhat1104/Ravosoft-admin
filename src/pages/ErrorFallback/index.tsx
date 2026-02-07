@@ -3,7 +3,11 @@ import React from 'react';
 import { Button, Stack, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const NotFound = () => {
+interface ErrorFallback {
+  code: number;
+}
+
+const ErrorFallback = ({ code }: ErrorFallback) => {
   const theme = useTheme();
   return (
     <Stack
@@ -32,4 +36,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default ErrorFallback;

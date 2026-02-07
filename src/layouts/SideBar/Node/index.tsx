@@ -1,7 +1,7 @@
 import { CircleOutlined, ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Stack, SxProps, Typography, useTheme } from '@mui/material';
 import { NodeRendererProps } from 'react-arborist';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { isNavCollapse, isNavGroup, isNavLeaf, NavItem } from '../config';
 import { SIDEBAR_INDENT } from '../NestList';
@@ -18,6 +18,7 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
     height: 1,
     '&:hover': {
       color: theme.palette.primary.main,
+      textDecoration: 'none',
     },
   };
 
@@ -67,14 +68,10 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
   } else if (isNavLeaf(nodeData)) {
     return (
       <Stack
-        direction="row"
-        alignItems="center"
         style={style}
-        ref={dragHandle}
-        onClick={() => {
-          navigate(nodeData?.url || '');
-        }}
-        sx={navItemSx}
+        component={Link}
+        to={nodeData?.url || ''}
+        sx={{ ...navItemSx, display: 'flex', flexDirection: 'row', alignItems: 'center' }}
       >
         <CircleOutlined sx={{ fontSize: 6, mr: 1 }} />
         <Typography sx={{ fontSize: 14 }}> {nodeData.label}</Typography>

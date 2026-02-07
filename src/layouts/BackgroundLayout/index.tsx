@@ -7,14 +7,18 @@ import background from '~/assets/img/img.jpg';
 
 import Header from '../Header';
 
-function BackgroundLayout({ children }: any) {
+interface BackgroundLayoutProps {
+  responsive?: boolean;
+}
+
+function BackgroundLayout({ responsive }: BackgroundLayoutProps) {
   const theme = useTheme();
   return (
     <>
       <Grid container height={'100vh'} sx={{ background: theme.palette.primary.main }}>
         <Grid size="grow" />
         <Grid
-          size={{ xs: 10, sm: 8, md: 6, lg: 4, xl: 3 }}
+          size={responsive ? { xs: 10, sm: 8, md: 6, lg: 4, xl: 3 } : undefined}
           sx={{
             display: 'flex',
             alignItems: 'center',

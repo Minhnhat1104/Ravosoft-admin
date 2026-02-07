@@ -6,6 +6,7 @@ import AuthGuardContext from '~/contexts/AuthGuardContext';
 import AxiosContext from '~/contexts/AxiosContext';
 import GuestGuardContext from '~/contexts/GuestGuardContext';
 import { demoRoute } from '~/pages/Demo/demoRoute';
+import ErrorFallback from '~/pages/ErrorFallback';
 const DefaultLayout = lazy(() => import('~/layouts'));
 const BackgroundLayout = lazy(() => import('~/layouts/BackgroundLayout'));
 const ChangePassword = lazy(() => import('~/pages/ChangePassword'));
@@ -13,7 +14,7 @@ const Demo = lazy(() => import('~/pages/Demo'));
 const ForgetPassword = lazy(() => import('~/pages/ForgetPassword'));
 const Home = lazy(() => import('~/pages/Home'));
 const Login = lazy(() => import('~/pages/Login'));
-const NotFound = lazy(() => import('~/pages/NotFound'));
+const NotFound = lazy(() => import('~/pages/ErrorFallback'));
 const Profile = lazy(() => import('~/pages/Profile'));
 const Register = lazy(() => import('~/pages/Register'));
 const ResetPassword = lazy(() => import('~/pages/ResetPassword'));
@@ -34,7 +35,7 @@ const publicRoutes: RouteObject[] = [
     ],
   },
   {
-    element: <BackgroundLayout />,
+    element: <BackgroundLayout responsive />,
     children: [
       {
         path: '/profile',
@@ -60,9 +61,26 @@ const publicRoutes: RouteObject[] = [
         path: '/pages/reset-password',
         element: <ResetPassword />,
       },
+    ],
+  },
+  {
+    element: <BackgroundLayout />,
+    children: [
+      {
+        path: '/pages/404-error',
+        element: <ErrorFallback code={404} />,
+      },
+      {
+        path: '/pages/500-error',
+        element: <ErrorFallback code={500} />,
+      },
+      {
+        path: '/pages/401-error',
+        element: <ErrorFallback code={501} />,
+      },
       {
         path: '*',
-        element: <NotFound />,
+        element: <ErrorFallback code={404} />,
       },
     ],
   },
