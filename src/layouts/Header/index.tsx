@@ -26,6 +26,7 @@ import UploadModal from '~/pages/UploadModal';
 import { COOKIE_KEY, cookieService } from '~/tools/storages';
 
 import Profile from './Profile';
+import ShoppingCart from './ShoppingCart';
 
 interface HeaderProps {
   isLogin?: boolean;
@@ -52,9 +53,7 @@ function Header({ isLogin }: HeaderProps) {
         sx={{
           width: '100%',
           height: 64,
-          // position: 'fixed',
           top: 0,
-          zIndex: 1,
           borderBottom: theme.border.light,
           display: 'flex',
           alignItems: 'center',
@@ -79,6 +78,7 @@ function Header({ isLogin }: HeaderProps) {
         {isLogin ? (
           <>
             <Stack direction="row" alignItems="center" spacing={1}>
+              <ShoppingCart />
               <LanguageSelect />
               <ThemeToggle />
               <Profile />
