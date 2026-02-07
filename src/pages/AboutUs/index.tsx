@@ -1,17 +1,18 @@
 import React from 'react';
 
-import { Box, Container, Grid, Stack, Typography } from '@mui/material';
+import { Box, Container, Grid, Stack, Typography, useTheme } from '@mui/material';
 
 import meeting from '~/assets/img/meeting.jpg';
 
 const AboutUs = () => {
+  const theme = useTheme();
   return (
     <Container sx={{ mx: 'auto' }}>
       <Stack
         sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', maxWidth: '80%', mx: 'auto', px: 2 }}
       >
         <Typography variant="h1" sx={{ fontSize: 46, fontWeight: 500, mb: 3 }}>
-          Hello! This is Nowa.
+          Hello! This is <span style={{ color: theme.palette.primary.main }}>Ravo.</span>
         </Typography>
         <Typography sx={{ fontSize: 25, mb: 2, fontWeight: 500 }}>
           Majority have suffered alteration in some form.

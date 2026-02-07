@@ -4,6 +4,7 @@ import { Box, Container, Stack, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 import Header from '../Header';
+import PageTitle from '../PageTitle';
 import Sidebar from '../SideBar';
 
 function DefaultLayout() {
@@ -28,6 +29,7 @@ function DefaultLayout() {
             background: theme.palette.background.softGrey,
           }}
         >
+          <PageTitle />
           <Outlet />
         </Stack>
       </Stack>

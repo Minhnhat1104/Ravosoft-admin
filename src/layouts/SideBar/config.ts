@@ -11,13 +11,13 @@ interface NavCollapse {
   id: string;
   type: 'collapse';
   icon?: SvgIconComponent;
-  children?: (NavCollapse | NavLeaf)[];
+  children: (NavCollapse | NavLeaf)[];
 }
 interface NavGroup {
   label: string;
   id: string;
   type: 'group';
-  children?: (NavCollapse | NavLeaf)[];
+  children: (NavCollapse | NavLeaf)[];
 }
 
 export type NavItem = NavLeaf | NavCollapse | NavGroup;
