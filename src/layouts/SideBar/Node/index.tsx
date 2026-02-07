@@ -1,7 +1,7 @@
 import { CircleOutlined, ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Stack, SxProps, Typography, useTheme } from '@mui/material';
 import { NodeRendererProps } from 'react-arborist';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useMatch, useNavigate } from 'react-router-dom';
 
 import { isNavCollapse, isNavGroup, isNavLeaf, NavItem } from '../config';
 import { SIDEBAR_INDENT } from '../NestList';
@@ -11,6 +11,7 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
   const navigate = useNavigate();
 
   const nodeData = node?.data;
+  const isActive = useMatch(isNavLeaf(nodeData) ? nodeData?.url : '');
 
   const navItemSx: SxProps = {
     pr: 2,
@@ -20,6 +21,11 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
       color: theme.palette.primary.main,
       textDecoration: 'none',
     },
+    ...(isActive && {
+      color: theme.palette.primary.main,
+      fontWeight: 500,
+      textDecoration: 'none',
+    }),
   };
 
   if (isNavGroup(nodeData)) {
@@ -56,7 +62,7 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
         sx={navItemSx}
       >
         {Icon ? <Icon sx={{ fontSize: 18, mr: 1 }} /> : <CircleOutlined sx={{ fontSize: 6, mr: 1 }} />}
-        <Typography sx={{ fontSize: 14 }}> {nodeData.label}</Typography>
+        <Typography sx={{ fontSize: 14, fontWeight: 'inherit' }}> {nodeData.label}</Typography>
 
         {node?.children && (
           <Stack sx={{ ml: 'auto' }}>
@@ -74,7 +80,7 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
         sx={{ ...navItemSx, display: 'flex', flexDirection: 'row', alignItems: 'center' }}
       >
         <CircleOutlined sx={{ fontSize: 6, mr: 1 }} />
-        <Typography sx={{ fontSize: 14 }}> {nodeData.label}</Typography>
+        <Typography sx={{ fontSize: 14, fontWeight: 'inherit' }}> {nodeData.label}</Typography>
 
         {node?.children && (
           <Stack sx={{ ml: 'auto' }}>
