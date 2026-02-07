@@ -16,13 +16,6 @@ declare module '@mui/material/styles' {
     700?: string;
     800?: string;
     900?: string;
-    A50?: string;
-    A100?: string;
-    A200?: string;
-    A300?: string;
-    A400?: string;
-    A700?: string;
-    A800?: string;
   }
 
   interface PaletteColor {
@@ -39,12 +32,5 @@ declare module '@mui/material/styles' {
     700?: string;
     800?: string;
     900?: string;
-    A50?: string;
-    A100?: string;
-    A200?: string;
-    A300?: string;
-    A400?: string;
-    A700?: string;
-    A800?: string;
   }
 }

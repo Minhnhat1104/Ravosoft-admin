@@ -17,7 +17,7 @@ export const WIDGET_SPACING = 3;
 function Home({}: HomeProps) {
   const theme = useTheme();
   return (
-    <>
+    <Stack sx={{ width: 1, p: 2 }}>
       {/* <Paper sx={{ width: 1, height: 1, p: 2 }}> */}
       <Stack direction="row" width={1} alignItems="center">
         <Stack>
@@ -66,7 +66,7 @@ function Home({}: HomeProps) {
       </Grid>
 
       {/* </Paper> */}
-    </>
+    </Stack>
   );
 }
 

@@ -30,13 +30,10 @@ declare module '@mui/material/styles' {
       dark: string;
     };
   }
-  // interface ThemeOptions {
-  //   hanbiro?: {
-  //     red?: PaletteColor;
-  //     indigo?: PaletteColor;
-  //     orange?: PaletteColor;
-  //   };
-  // }
+
+  interface TypeBackground {
+    softGrey: string;
+  }
 }
 
 declare module '@mui/material/Button' {

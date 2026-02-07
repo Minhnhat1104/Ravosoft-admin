@@ -17,13 +17,8 @@ const Default = (colors: PalettesProps): PaletteThemeProps => {
     700: grey[8],
     800: grey[9],
     900: grey[10],
-    A50: grey[15],
-    A100: grey[11],
-    A200: grey[12],
-    A400: grey[13],
-    A700: grey[14],
-    A800: grey[16],
   };
+
   const contrastText = '#fff';
 
   const primary = [
@@ -77,9 +72,6 @@ const Default = (colors: PalettesProps): PaletteThemeProps => {
       dark: greyColors[700],
       800: greyColors[800],
       darker: greyColors[900],
-      A100: greyColors[0],
-      A200: greyColors.A400,
-      A300: greyColors.A700,
       contrastText: greyColors[0],
     },
     error: {

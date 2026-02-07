@@ -13,7 +13,6 @@ import Palette from './palette';
 import CustomShadows from './shadows';
 import Typography from './typography';
 
-
 type ThemeCustomizationProps = {
   children: ReactNode;
 };
@@ -80,14 +79,6 @@ export default function ThemeCustomization({ children }: ThemeCustomizationProps
       },
       typography: {
         ...themeTypography,
-        voraMenu: {
-          ...themeTypography.h5,
-          fontWeight: themeTypography.fontWeightRegular,
-        },
-        voraTollbar: {
-          ...themeTypography.h5,
-          fontWeight: themeTypography.fontWeightMedium,
-        },
       },
     }),
     [themeDirection, theme, themeTypography, themeCustomShadows]

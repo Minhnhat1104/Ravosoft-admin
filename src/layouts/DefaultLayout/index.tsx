@@ -24,13 +24,11 @@ function DefaultLayout() {
           sx={{
             flex: 1,
             minHeight: 0,
-            py: 2,
             overflowY: 'auto',
+            background: theme.palette.background.softGrey,
           }}
         >
-          <Container>
-            <Outlet />
-          </Container>
+          <Outlet />
         </Stack>
       </Stack>
     </Stack>
