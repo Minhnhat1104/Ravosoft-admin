@@ -21,6 +21,8 @@ const NotFound = lazy(() => import('~/pages/ErrorFallback'));
 const Profile = lazy(() => import('~/pages/Profile'));
 const Register = lazy(() => import('~/pages/Register'));
 const ResetPassword = lazy(() => import('~/pages/ResetPassword'));
+const UnderConstruction = lazy(() => import('~/pages/UnderConstruction'));
+const Dashboard1 = lazy(() => import('~/pages/Home'));
 
 const publicRoutes: RouteObject[] = [
   {
@@ -29,6 +31,10 @@ const publicRoutes: RouteObject[] = [
       {
         path: '/home',
         element: <Home />,
+      },
+      {
+        path: '/dashboard/dashboard-1',
+        element: <Dashboard1 />,
       },
       {
         path: '/demo',
@@ -67,6 +73,10 @@ const publicRoutes: RouteObject[] = [
       {
         path: '/pages/lockscreen',
         element: <Lockscreen />,
+      },
+      {
+        path: '/pages/under-construction',
+        element: <UnderConstruction />,
       },
     ],
   },

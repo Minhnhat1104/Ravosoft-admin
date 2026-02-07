@@ -38,7 +38,7 @@ export const sidebarItems: NavItem[] = [
             label: 'Dashboard - 1',
             id: 'dashboard_1',
             type: 'leaf',
-            url: '/main/dashboard-1',
+            url: '/dashboard/dashboard-1',
           },
         ],
       },
