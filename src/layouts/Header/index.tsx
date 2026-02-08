@@ -16,14 +16,11 @@ import { t } from 'i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import logo from '~/assets/img/favicon.ico';
 import { userState } from '~/atoms';
 import LanguageSelect from '~/components/LanguageSelect';
 import ThemeToggle from '~/components/ThemeToggle';
 import { useAuthMutation } from '~/hooks/useAuthMutation';
 import { LangKey } from '~/lang/langKey';
-import UploadModal from '~/pages/UploadModal';
-import { COOKIE_KEY, cookieService } from '~/tools/storages';
 
 import Profile from './Profile';
 import ShoppingCart from './ShoppingCart';
@@ -35,16 +32,8 @@ interface HeaderProps {
 function Header({ isLogin }: HeaderProps) {
   const [user, setUser] = useRecoilState(userState);
   const theme = useTheme();
-  const [openWrite, setOpenWrite] = useState<boolean>(false);
   const { mUserLogout } = useAuthMutation();
   const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    await mUserLogout.mutateAsync({});
-    setUser(null);
-    cookieService.remove(COOKIE_KEY.REFRESH_TOKEN);
-    navigate('/pages/sign-in');
-  };
 
   return (
     <>
@@ -95,8 +84,6 @@ function Header({ isLogin }: HeaderProps) {
           </Stack>
         )}
       </Box>
-
-      {openWrite && <UploadModal isOpen={openWrite} onClose={() => setOpenWrite(false)} />}
     </>
   );
 }
