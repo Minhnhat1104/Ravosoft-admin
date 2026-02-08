@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BusinessOutlined, HouseOutlined, Shop2Outlined } from '@mui/icons-material';
+import { BusinessOutlined, EmojiEventsOutlined, HouseOutlined, Shop2Outlined, WorkOutline } from '@mui/icons-material';
 import { Container, Grid, Stack, SxProps, Typography, useTheme } from '@mui/material';
 
 import face1 from '~/assets/img/face/face-1.jpg';
@@ -16,7 +16,7 @@ const card1Items: Card1Props[] = [
     icon: Shop2Outlined,
     value: '256',
     label: 'Completed Projects',
-    color: 'success',
+    color: 'primary',
   },
   {
     icon: BusinessOutlined,
@@ -25,16 +25,16 @@ const card1Items: Card1Props[] = [
     color: 'error',
   },
   {
-    icon: HouseOutlined,
+    icon: WorkOutline,
     value: '846',
     label: 'Available Employeed',
     color: 'warning',
   },
   {
-    icon: HouseOutlined,
+    icon: EmojiEventsOutlined,
     value: '153',
     label: 'Awards won',
-    color: 'primary',
+    color: 'info',
   },
 ];
 
