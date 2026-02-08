@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { Stack, SxProps, useTheme } from '@mui/material';
 
 interface CustomCardProps {
   sx?: SxProps;
+  children: ReactNode;
 }
 
-const CustomCard = ({ sx }: CustomCardProps) => {
+const CustomCard = ({ sx, children }: CustomCardProps) => {
   const theme = useTheme();
   return (
     <Stack
@@ -17,7 +18,7 @@ const CustomCard = ({ sx }: CustomCardProps) => {
         ...sx,
       }}
     >
-      CustomCard
+      {children}
     </Stack>
   );
 };

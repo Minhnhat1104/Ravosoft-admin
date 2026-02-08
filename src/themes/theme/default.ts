@@ -32,7 +32,7 @@ const Default = (colors: PalettesProps): PaletteThemeProps => {
     '#7bdaca',
     '#b1e8df',
     '#e0f6f3',
-  ];
+  ]?.reverse();
 
   return {
     // primary: {

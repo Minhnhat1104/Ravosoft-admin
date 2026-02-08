@@ -5,6 +5,7 @@ import { Box, Container, Grid, Stack, Typography, useTheme } from '@mui/material
 import meeting from '~/assets/img/meeting.jpg';
 
 import Section2 from './Section2';
+import Section3 from './Section3';
 
 const AboutUs = () => {
   const theme = useTheme();
@@ -29,6 +30,8 @@ const AboutUs = () => {
       <Box component="img" src={meeting} sx={{ borderRadius: 1 }} />
 
       <Section2 />
+
+      <Section3 />
     </Container>
   );
 };
