@@ -1,4 +1,4 @@
-import { CircleOutlined, ExpandLess, ExpandMore } from '@mui/icons-material';
+import { CircleOutlined, ExpandLess, ExpandMore, KeyboardArrowRightOutlined } from '@mui/icons-material';
 import { Stack, SxProps, Typography, useTheme } from '@mui/material';
 import { NodeRendererProps } from 'react-arborist';
 import { Link, useMatch, useNavigate } from 'react-router-dom';
@@ -66,7 +66,7 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
 
         {node?.children && (
           <Stack sx={{ ml: 'auto' }}>
-            {node?.isOpen ? <ExpandLess sx={{ fontSize: 20 }} /> : <ExpandMore sx={{ fontSize: 20 }} />}
+            {node?.isOpen ? <KeyboardArrowRightOutlined sx={{ fontSize: 20 }} /> : <ExpandMore sx={{ fontSize: 20 }} />}
           </Stack>
         )}
       </Stack>
