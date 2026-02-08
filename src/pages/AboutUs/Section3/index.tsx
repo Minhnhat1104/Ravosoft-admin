@@ -3,10 +3,10 @@ import React from 'react';
 import { BusinessOutlined, HouseOutlined, Shop2Outlined } from '@mui/icons-material';
 import { Container, Grid, Stack, SxProps, Typography, useTheme } from '@mui/material';
 
-import face1 from '~/assets/img/face-1.jpg';
-import face2 from '~/assets/img/face-2.jpg';
-import face3 from '~/assets/img/face-3.jpg';
-import face4 from '~/assets/img/face-4.jpg';
+import face1 from '~/assets/img/face/face-1.jpg';
+import face2 from '~/assets/img/face/face-2.jpg';
+import face3 from '~/assets/img/face/face-3.jpg';
+import face4 from '~/assets/img/face/face-4.jpg';
 
 import Card1, { Card1Props } from './Card1';
 import Card2, { Card2Props } from './Card2';

@@ -4,7 +4,7 @@ import { SxProps } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
-import face1 from '~/assets/img/face-1.jpg';
+import face1 from '~/assets/img/face/face-1.jpg';
 import { getUserAvatarSrc } from '~/tools/image';
 
 function stringToColor(string: string) {
