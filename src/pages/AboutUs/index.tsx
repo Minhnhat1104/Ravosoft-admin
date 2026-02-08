@@ -12,7 +12,15 @@ const AboutUs = () => {
   return (
     <Container sx={{ mx: 'auto' }}>
       <Stack
-        sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', maxWidth: '80%', mx: 'auto', px: 2 }}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'column',
+          maxWidth: '80%',
+          mx: 'auto',
+          px: 2,
+          mb: 6,
+        }}
       >
         <Typography variant="h1" sx={{ fontSize: 46, fontWeight: 500, mb: 3 }}>
           Hello! This is <span style={{ color: theme.palette.primary.main }}>Ravo.</span>
@@ -31,7 +39,7 @@ const AboutUs = () => {
 
       <Section2 />
 
-      <Section3 />
+      <Section3 sx={{ mb: 6 }} />
     </Container>
   );
 };

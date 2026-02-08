@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { SxProps } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
@@ -30,6 +31,7 @@ interface BaseAvatarProps {
   name: string | undefined;
   src?: string;
   size?: 'small' | 'medium' | 'large' | 'extra-large' | number;
+  sx?: SxProps;
 }
 
 const sizeMap = {
@@ -39,7 +41,7 @@ const sizeMap = {
   'extra-large': 48,
 };
 
-const BaseAvatar = ({ src = face1, name, size = 'medium' }: BaseAvatarProps) => {
+const BaseAvatar = ({ src = face1, name, size = 'medium', sx }: BaseAvatarProps) => {
   return (
     <Avatar
       alt={name}
@@ -48,6 +50,7 @@ const BaseAvatar = ({ src = face1, name, size = 'medium' }: BaseAvatarProps) => 
         width: typeof size === 'number' ? size : sizeMap[size],
         height: typeof size === 'number' ? size : sizeMap[size],
         bgcolor: stringToColor(name || 'Unknown'),
+        ...sx,
       }}
     >
       {`${name?.split(' ')?.[0]?.[0] || 'U'} ${name?.split(' ')?.[1]?.[0] || ''}`}
