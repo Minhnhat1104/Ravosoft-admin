@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { CheckCircle, LanguageOutlined } from '@mui/icons-material';
 import {
   Avatar,
+  Box,
   ClickAwayListener,
   Fade,
   IconButton,
@@ -56,10 +57,24 @@ const LanguageSelect = () => {
     setOpen(false);
   };
 
+  const langOption = languageOptions?.find((_option) => _option?.value === i18next.language) || languageOptions[0];
+
   return (
     <>
       <IconButton ref={anchorRef} onClick={handleToggle} size="small">
-        <LanguageOutlined fontSize="small" />
+        <Box
+          sx={{
+            borderRadius: 999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            width: 21,
+            height: 21,
+          }}
+        >
+          <Box component={Flag} code={langOption?.countryFlag} sx={{ height: 22, maxWidth: 'none' }} />
+        </Box>
       </IconButton>
 
       <Popper open={open} anchorEl={anchorRef?.current} transition placement="bottom-start" sx={{ zIndex: 1 }}>
