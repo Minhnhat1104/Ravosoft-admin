@@ -17,29 +17,33 @@ import {
   Stack,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { FlagComponent, US, VN } from 'country-flag-icons/react/1x1';
+import { US as US3x2, VN as VN3x2 } from 'country-flag-icons/react/3x2';
 import i18next from 'i18next';
-import Flag from 'react-world-flags';
 import { useRecoilValue } from 'recoil';
 
 import { userState } from '~/atoms';
-import { getUserAvatarSrc } from '~/tools/image';
 import { LOCAL_STORAGE_KEY, localStorageService } from '~/tools/storages';
 import { LabelValue } from '~/types';
+// import { FlagComponent, US, VI } from 'country-flag-icons/react/3x2'
 
 interface LanguageOption extends LabelValue {
-  countryFlag: string;
+  countryFlag1x1: FlagComponent;
+  countryFlag3x2: FlagComponent;
 }
 
 const languageOptions: LanguageOption[] = [
   {
     label: 'English',
     value: 'en',
-    countryFlag: 'us',
+    countryFlag1x1: US,
+    countryFlag3x2: US3x2,
   },
   {
     label: 'Vietnamese',
     value: 'vi',
-    countryFlag: 'vn',
+    countryFlag1x1: VN,
+    countryFlag3x2: VN3x2,
   },
 ];
 
@@ -73,7 +77,7 @@ const LanguageSelect = () => {
             height: 21,
           }}
         >
-          <Box component={Flag} code={langOption?.countryFlag} sx={{ height: 22, maxWidth: 'none' }} />
+          <Box component={langOption.countryFlag1x1} sx={{ width: 21, height: 21 }} />
         </Box>
       </IconButton>
 
@@ -95,7 +99,13 @@ const LanguageSelect = () => {
                           // selected={isActive}
                         >
                           <ListItemIcon sx={{ minWidth: 32 }}>
-                            <Flag code={_item?.countryFlag} width={20} />
+                            {/* <Box
+                              component={ReactCountryFlag}
+                              svg
+                              countryCode={_item?.countryFlag}
+                              sx={{ fontSize: 20, lineHeight: '20px', maxWidth: 'none', flexShrink: 0 }}
+                            /> */}
+                            <Box component={_item.countryFlag3x2} sx={{ height: 14 }} />
                           </ListItemIcon>
                           <ListItemText primary={_item.label} />
 
