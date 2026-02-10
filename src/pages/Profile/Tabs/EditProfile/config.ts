@@ -1,6 +1,9 @@
 import { TextField } from '@mui/material';
 
+import CheckboxGroup from '~/components/CheckboxGroup';
 import { WriteField } from '~/types';
+
+import { emailVerifyOptions } from './constants';
 
 export const nameFields: WriteField[] = [
   {
@@ -151,5 +154,33 @@ export const socialFields: WriteField[] = [
       size: 'small',
     },
     defaultValue: 'github.com/sprukos',
+  },
+];
+
+export const aboutYourselfFields: WriteField[] = [
+  {
+    label: 'Biographical Info',
+    keyName: 'biographical',
+    component: TextField,
+    componentProps: {
+      fullWidth: true,
+      size: 'small',
+      multiline: true,
+      minRows: 4,
+    },
+    defaultValue:
+      'pleasure rationally encounter but because pursue consequences that are extremely painful.occur in which toil and pain can procure him some great pleasure..',
+  },
+];
+
+export const emailFields: WriteField[] = [
+  {
+    label: 'Verified User',
+    keyName: 'verified_user',
+    component: CheckboxGroup,
+    componentProps: {
+      options: emailVerifyOptions,
+    },
+    defaultValue: emailVerifyOptions,
   },
 ];
