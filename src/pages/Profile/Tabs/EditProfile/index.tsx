@@ -4,8 +4,9 @@ import { Grid, Stack, Typography } from '@mui/material';
 
 import CustomCard from '~/components/CustomCard';
 
+import WriteFields from '../WriteFields';
+
 import { aboutYourselfFields, contactFields, emailFields, nameFields, socialFields } from './config';
-import WriteFields from './WriteFields';
 
 const EditProfile = () => {
   return (

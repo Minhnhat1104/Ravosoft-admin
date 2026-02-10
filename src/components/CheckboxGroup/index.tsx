@@ -7,15 +7,16 @@ import { LabelValue } from '~/types';
 interface CheckboxGroupProps {
   //   value: LabelValue[];
   //   onChange: (nVal: LabelValue[]) => void;
+  defaultValue: LabelValue[];
   options: LabelValue[];
   disabled?: boolean;
 }
 
-const CheckboxGroup = ({ options, disabled }: CheckboxGroupProps) => {
+const CheckboxGroup = ({ defaultValue, options, disabled }: CheckboxGroupProps) => {
   return (
     <FormGroup>
       {options?.map((_option, i) => {
-        // const checked = !!value?.find((_item) => _item?.value == _option?.value);
+        const checked = !!defaultValue?.find((_item) => _item?.value == _option?.value);
 
         return (
           <FormControlLabel
@@ -23,7 +24,7 @@ const CheckboxGroup = ({ options, disabled }: CheckboxGroupProps) => {
             control={
               <Checkbox
                 size="small"
-                defaultChecked
+                defaultChecked={checked}
                 // checked={checked}
                 // onChange={() => {
                 //   if (checked) {

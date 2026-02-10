@@ -13,7 +13,7 @@ interface WriteFieldsProps {
 const WriteFields = ({ label, fields, sx }: WriteFieldsProps) => {
   return (
     <Stack sx={sx}>
-      <Typography sx={{ fontWeight: 600, mb: 3 }}>{label}</Typography>
+      <Typography sx={{ fontWeight: 600, mb: 3, textTransform: 'uppercase' }}>{label}</Typography>
       <Grid container spacing={2}>
         {fields?.map((_field) => (
           <React.Fragment key={_field?.keyName}>

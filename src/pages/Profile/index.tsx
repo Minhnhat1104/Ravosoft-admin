@@ -28,6 +28,7 @@ import { LabelValue } from '~/types';
 
 import AvatarWrite from './AvatarWrite';
 import About from './Tabs/About';
+import AccountSettings from './Tabs/AccountSettings';
 import EditProfile from './Tabs/EditProfile';
 type ProfileFormData = {
   email: string;
@@ -143,6 +144,7 @@ function Profile() {
 
       {tab === ProfileTab.About && <About />}
       {tab === ProfileTab.EditProfile && <EditProfile />}
+      {tab === ProfileTab.AccountSettings && <AccountSettings />}
     </Stack>
   );
 }
