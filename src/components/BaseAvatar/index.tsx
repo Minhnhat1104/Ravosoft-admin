@@ -31,6 +31,7 @@ interface BaseAvatarProps {
   name: string | undefined;
   src?: string;
   size?: 'small' | 'medium' | 'large' | 'extra-large' | number;
+  sharp?: 'round' | 'rectangle';
   sx?: SxProps;
 }
 
@@ -41,7 +42,7 @@ const sizeMap = {
   'extra-large': 48,
 };
 
-const BaseAvatar = ({ src = face1, name, size = 'medium', sx }: BaseAvatarProps) => {
+const BaseAvatar = ({ src = face1, name, size = 'medium', sharp = 'round', sx }: BaseAvatarProps) => {
   return (
     <Avatar
       alt={name}
@@ -50,6 +51,7 @@ const BaseAvatar = ({ src = face1, name, size = 'medium', sx }: BaseAvatarProps)
         width: typeof size === 'number' ? size : sizeMap[size],
         height: typeof size === 'number' ? size : sizeMap[size],
         bgcolor: stringToColor(name || 'Unknown'),
+        borderRadius: sharp === 'rectangle' ? 1 : undefined,
         ...sx,
       }}
     >

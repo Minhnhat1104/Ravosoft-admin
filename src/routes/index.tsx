@@ -46,19 +46,15 @@ const publicRoutes: RouteObject[] = [
         path: '/pages/about-us',
         element: <AboutUs />,
       },
+      {
+        path: '/pages/profile',
+        element: <Profile />,
+      },
     ],
   },
   {
     element: <BackgroundLayout responsive />,
     children: [
-      {
-        path: '/profile',
-        element: <Profile />,
-      },
-      {
-        path: '/change-password',
-        element: <ChangePassword />,
-      },
       {
         path: '/pages/sign-in',
         element: <Login />,

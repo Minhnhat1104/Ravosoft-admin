@@ -122,6 +122,12 @@ export const sidebarItems: NavItem[] = [
             type: 'leaf',
             url: '/pages/about-us',
           },
+          {
+            label: 'Profile',
+            id: 'profile',
+            type: 'leaf',
+            url: '/pages/profile',
+          },
         ],
       },
     ],
