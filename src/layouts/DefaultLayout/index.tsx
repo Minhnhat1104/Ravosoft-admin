@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import { Box, Container, Stack, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
+import LoadingCircular from '~/components/LoadingCircular';
 import SplitView from '~/components/SplitView';
 
 import Header from '../Header';
@@ -12,32 +13,28 @@ import Sidebar from '../SideBar';
 function DefaultLayout() {
   const theme = useTheme();
   return (
-    <Stack
-      height={'100vh'}
-      direction="row"
-      sx={{ background: theme.palette.background.paper, transition: 'background 0.3s ease-in-out' }}
-    >
-      <SplitView
-        leftPane={<Sidebar />}
-        rightPane={
-          <Stack sx={{ height: 1, flex: 1, minWidth: 0 }}>
-            <Header isLogin />
+    <SplitView
+      leftPane={<Sidebar />}
+      rightPane={
+        <Stack sx={{ height: 1, flex: 1, minWidth: 0 }}>
+          <Header isLogin />
 
-            <Stack
-              sx={{
-                flex: 1,
-                minHeight: 0,
-                overflowY: 'auto',
-                background: theme.palette.background.softGrey,
-              }}
-            >
-              <PageTitle />
+          <Stack
+            sx={{
+              flex: 1,
+              minHeight: 0,
+              overflowY: 'auto',
+              background: theme.palette.background.softGrey,
+            }}
+          >
+            <PageTitle />
+            <Suspense fallback={<LoadingCircular sx={{ flex: 1, minHeight: 0 }} />}>
               <Outlet />
-            </Stack>
+            </Suspense>
           </Stack>
-        }
-      />
-    </Stack>
+        </Stack>
+      }
+    />
   );
 }
 

@@ -47,7 +47,7 @@ function App() {
       <RecoilRoot>
         <ThemeCustomization>
           <Suspense fallback={<LoadingCircular fullHeight sx={{ height: '100vh' }} />}>
-            <Stack sx={{ width: 1, height: '100vh', background: theme.palette.grey[100], overflowY: 'auto' }}>
+            <Stack sx={{ width: '100vw', height: '100vh', overflowY: 'auto' }}>
               <CssBaseline />
               <ToastContext>
                 <QueryClientProvider client={queryClient}>

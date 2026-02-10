@@ -1,4 +1,4 @@
-import { CircleOutlined, ExpandLess, ExpandMore, KeyboardArrowRightOutlined } from '@mui/icons-material';
+import { CircleOutlined, KeyboardArrowDownOutlined, KeyboardArrowRightOutlined } from '@mui/icons-material';
 import { Stack, SxProps, Typography, useTheme } from '@mui/material';
 import { NodeRendererProps } from 'react-arborist';
 import { Link, useMatch, useNavigate } from 'react-router-dom';
@@ -66,7 +66,11 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
 
         {node?.children && (
           <Stack sx={{ ml: 'auto' }}>
-            {node?.isOpen ? <KeyboardArrowRightOutlined sx={{ fontSize: 20 }} /> : <ExpandMore sx={{ fontSize: 20 }} />}
+            {node?.isOpen ? (
+              <KeyboardArrowDownOutlined sx={{ fontSize: 20 }} />
+            ) : (
+              <KeyboardArrowRightOutlined sx={{ fontSize: 20 }} />
+            )}
           </Stack>
         )}
       </Stack>
@@ -81,12 +85,6 @@ const Node = ({ node, style, dragHandle }: NodeRendererProps<NavItem>) => {
       >
         <CircleOutlined sx={{ fontSize: 6, mr: 1 }} />
         <Typography sx={{ fontSize: 14, fontWeight: 'inherit' }}> {nodeData.label}</Typography>
-
-        {node?.children && (
-          <Stack sx={{ ml: 'auto' }}>
-            {node?.isOpen ? <ExpandLess sx={{ fontSize: 14 }} /> : <ExpandMore sx={{ fontSize: 14 }} />}
-          </Stack>
-        )}
       </Stack>
     );
   } else {
