@@ -1,4 +1,4 @@
-import { Home, HomeOutlined, LayersOutlined, SvgIconComponent } from '@mui/icons-material';
+import { AppsOutlined, Home, HomeOutlined, LayersOutlined, SvgIconComponent } from '@mui/icons-material';
 
 interface NavLeaf {
   label: string;
@@ -127,6 +127,32 @@ export const sidebarItems: NavItem[] = [
             id: 'profile',
             type: 'leaf',
             url: '/pages/profile',
+          },
+        ],
+      },
+      {
+        label: 'Apps',
+        id: 'apps',
+        icon: AppsOutlined,
+        type: 'collapse',
+        children: [
+          {
+            label: 'Calendar',
+            id: 'calendar',
+            type: 'leaf',
+            url: '/pages/calendar',
+          },
+          {
+            label: 'Contacts',
+            id: 'contacts',
+            type: 'leaf',
+            url: '/pages/contacts',
+          },
+          {
+            label: 'File-manager',
+            id: 'file_manager',
+            type: 'leaf',
+            url: '/pages/file_manager',
           },
         ],
       },
