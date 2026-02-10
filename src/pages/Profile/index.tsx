@@ -27,6 +27,7 @@ import { validationRegex } from '~/tools/regexs';
 import { LabelValue } from '~/types';
 
 import AvatarWrite from './AvatarWrite';
+import About from './Tabs/About';
 type ProfileFormData = {
   email: string;
   firstName: string;
@@ -92,7 +93,7 @@ function Profile() {
 
   return (
     <Stack sx={{ width: 1, p: 2.5 }}>
-      <CustomCard>
+      <CustomCard sx={{ mb: 2.5 }}>
         <Stack direction="row" sx={{ width: 1, alignItems: 'center', p: 2.5 }}>
           <BaseAvatar src={profile} name="Sonya Taylor" sharp="rectangle" size={180} sx={{ mr: 3 }} />
 
@@ -138,6 +139,8 @@ function Profile() {
           ))}
         </Tabs>
       </CustomCard>
+
+      <About />
     </Stack>
   );
 }

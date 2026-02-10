@@ -5,9 +5,10 @@ import { Stack, SxProps, useTheme } from '@mui/material';
 interface CustomCardProps {
   sx?: SxProps;
   children: ReactNode;
+  spacing?: number;
 }
 
-const CustomCard = ({ sx, children }: CustomCardProps) => {
+const CustomCard = ({ sx, children, spacing }: CustomCardProps) => {
   const theme = useTheme();
   return (
     <Stack
@@ -17,6 +18,7 @@ const CustomCard = ({ sx, children }: CustomCardProps) => {
         boxShadow: '1px 1px 7px rgba(154,154,204,.1)',
         ...sx,
       }}
+      spacing={spacing}
     >
       {children}
     </Stack>
