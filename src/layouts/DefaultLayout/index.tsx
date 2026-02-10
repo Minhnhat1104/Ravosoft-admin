@@ -3,6 +3,8 @@ import React from 'react';
 import { Box, Container, Stack, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
+import SplitView from '~/components/SplitView';
+
 import Header from '../Header';
 import PageTitle from '../PageTitle';
 import Sidebar from '../SideBar';
@@ -15,24 +17,26 @@ function DefaultLayout() {
       direction="row"
       sx={{ background: theme.palette.background.paper, transition: 'background 0.3s ease-in-out' }}
     >
-      <Stack sx={{ height: 1, width: 240, borderRight: theme.border.light }}>
-        <Sidebar />
-      </Stack>
-      <Stack sx={{ height: 1, flex: 1, minWidth: 0 }}>
-        <Header isLogin />
+      <SplitView
+        leftPane={<Sidebar />}
+        rightPane={
+          <Stack sx={{ height: 1, flex: 1, minWidth: 0 }}>
+            <Header isLogin />
 
-        <Stack
-          sx={{
-            flex: 1,
-            minHeight: 0,
-            overflowY: 'auto',
-            background: theme.palette.background.softGrey,
-          }}
-        >
-          <PageTitle />
-          <Outlet />
-        </Stack>
-      </Stack>
+            <Stack
+              sx={{
+                flex: 1,
+                minHeight: 0,
+                overflowY: 'auto',
+                background: theme.palette.background.softGrey,
+              }}
+            >
+              <PageTitle />
+              <Outlet />
+            </Stack>
+          </Stack>
+        }
+      />
     </Stack>
   );
 }

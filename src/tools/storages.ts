@@ -2,6 +2,7 @@ import Cookies, { CookieSetOptions } from 'universal-cookie';
 
 export enum LOCAL_STORAGE_KEY {
   // themes
+  SIDEBAR_WIDTH = 'sidebar-width',
   THEME_MODE = 'theme-mode',
   LANG = 'lang',
 }
