@@ -17,3 +17,11 @@ export interface LabelValue<T = string, V = string> {
   label: T;
   value: V;
 }
+
+export interface WriteField {
+  label: string;
+  keyName: string;
+  defaultValue: string;
+  component: React.FC<any>;
+  componentProps?: any;
+}
