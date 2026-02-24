@@ -1,4 +1,5 @@
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { Timeline, TimelineItem, TimelineSeparator, TimelineDot, TimelineConnector, TimelineContent } from '@mui/lab';
 import { Box, Chip, Stack, Typography, Button } from '@mui/material';
 
 import { PalleteColor } from '~/themes/types/theme';
@@ -38,14 +39,6 @@ const activities: ActivityItem[] = [
   },
 ];
 
-function StatusChip({ status, time }: { status?: { label: string; color: PalleteColor }; time?: string }) {
-  if (time) return <Chip size="small" label={time} variant="light" color="secondary" />;
-
-  if (!status) return null;
-
-  return <Chip size="small" label={status.label} variant="light" color={status.color} />;
-}
-
 export default function ActivitySection() {
   return (
     <Box>
@@ -58,47 +51,58 @@ export default function ActivitySection() {
       </Stack>
 
       {/* Timeline */}
-      <Stack spacing={3}>
+      <Timeline
+        sx={{
+          p: 0,
+          m: 0,
+          '& .MuiTimelineItem-root:before': { flex: 0, padding: 0 }, // bỏ khoảng trống bên trái mặc định
+        }}
+      >
         {activities.map((item, index) => (
-          <Stack key={index} direction="row" spacing={2}>
-            {/* timeline dot + line */}
-            <Box
-              sx={{
-                position: 'relative',
-                mt: '6px',
-              }}
-            >
-              <FiberManualRecordIcon sx={{ fontSize: 10, color: '#5EC7C2' }} />
-
-              {index !== activities.length - 1 && (
+          <TimelineItem key={`${item.date}-${index}`} sx={{ minHeight: 'auto' }}>
+            <TimelineSeparator>
+              <TimelineDot
+                sx={{
+                  p: 0,
+                  m: 0,
+                  boxShadow: 'none',
+                  bgcolor: 'transparent',
+                }}
+              >
+                {/* dot giống FiberManualRecordIcon */}
                 <Box
                   sx={{
-                    position: 'absolute',
-                    top: 12,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: 2,
-                    height: 'calc(100% + 16px)',
-                    bgcolor: '#E0E0E0',
+                    width: 10,
+                    height: 10,
+                    borderRadius: '50%',
+                    bgcolor: '#5EC7C2',
                   }}
                 />
-              )}
-            </Box>
+              </TimelineDot>
 
-            {/* content */}
-            <Box sx={{ flex: 1 }}>
-              <Stack direction="row" justifyContent="space-between">
+              {index !== activities.length - 1 && <TimelineConnector sx={{ bgcolor: '#E0E0E0', width: 2 }} />}
+            </TimelineSeparator>
+
+            <TimelineContent sx={{ pt: 0, pb: 0, pr: 0 }}>
+              <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
                 <Typography fontWeight={600}>{item.date}</Typography>
-                <StatusChip status={item.status} time={item.time} />
+
+                <Stack direction="row" spacing={1}>
+                  {item?.time && <Chip size="small" label={item.time} variant="light" color="secondary" />}
+
+                  {item?.status && (
+                    <Chip size="small" label={item.status.label} variant="light" color={item.status.color} />
+                  )}
+                </Stack>
               </Stack>
 
               <Typography variant="body2" color="text.secondary" mt={0.5}>
                 {item.description}
               </Typography>
-            </Box>
-          </Stack>
+            </TimelineContent>
+          </TimelineItem>
         ))}
-      </Stack>
+      </Timeline>
     </Box>
   );
 }
