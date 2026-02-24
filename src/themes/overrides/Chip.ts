@@ -22,7 +22,7 @@ export default function ThemeChip(theme: Theme) {
         },
       },
       defaultProps: {
-        shape: 'square',
+        shape: 'square' as const,
       },
       variants: [
         ...palleteColors.map((color) => {
@@ -35,13 +35,13 @@ export default function ThemeChip(theme: Theme) {
           };
         }),
         {
-          props: { shape: 'rounded' },
+          props: { shape: 'rounded' as const },
           style: {
             borderRadius: 999,
           },
         },
         {
-          props: { shape: 'square' },
+          props: { shape: 'square' as const },
           style: {
             borderRadius: 4,
           },
