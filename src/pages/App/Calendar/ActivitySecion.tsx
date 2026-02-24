@@ -48,7 +48,7 @@ function StatusChip({ status, time }: { status?: { label: string; color: Pallete
 
 export default function ActivitySection() {
   return (
-    <Box sx={{ mt: 2 }}>
+    <Box>
       {/* Header */}
       <Stack direction="row" justifyContent="space-between" alignItems="center" mb={2}>
         <Typography fontWeight={700}>Activity :</Typography>

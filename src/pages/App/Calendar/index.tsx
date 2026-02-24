@@ -5,7 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import { alpha, Box, Button, Grid, Stack, Typography, useTheme } from '@mui/material';
+import { alpha, Box, Button, Divider, Grid, Stack, Typography, useTheme } from '@mui/material';
 
 import CustomCard from '~/components/CustomCard';
 import { PalleteColor } from '~/themes/types/theme';
@@ -112,6 +112,8 @@ export default function Calendar() {
               );
             })}
           </Stack>
+
+          <Divider sx={{ mx: -2, my: 2 }} />
 
           <ActivitySection />
         </CustomCard>
