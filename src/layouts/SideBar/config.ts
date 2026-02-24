@@ -137,7 +137,7 @@ export const sidebarItems: NavItem[] = [
         type: 'collapse',
         children: [
           {
-            label: 'Calendar',
+            label: 'Full Calendar',
             id: 'calendar',
             type: 'leaf',
             url: '/pages/calendar',

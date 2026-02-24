@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 
-import { Stack, SxProps, useTheme } from '@mui/material';
+import { Stack, SxProps, Theme, useTheme } from '@mui/material';
 
 interface CustomCardProps {
-  sx?: SxProps;
+  sx?: SxProps<Theme>;
   children: ReactNode;
   spacing?: number;
 }

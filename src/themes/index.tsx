@@ -3,40 +3,21 @@ import React from 'react';
 
 import { CssBaseline, GlobalStyles, StyledEngineProvider } from '@mui/material';
 import { createTheme, Theme, ThemeOptions, ThemeProvider, TypographyVariantsOptions } from '@mui/material/styles';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 
 import { configState } from '~/atoms/config';
-import { CustomShadowProps } from '~/themes/types/theme';
+import { CustomShadowProps, PalleteColor } from '~/themes/types/theme';
 
 import componentsOverride from './overrides';
 import Palette from './palette';
 import CustomShadows from './shadows';
 import Typography from './typography';
 
-type ThemeCustomizationProps = {
+interface ThemeCustomizationProps {
   children: ReactNode;
-};
-
-declare module '@mui/material/styles' {
-  interface TypographyVariants {
-    voraMenu: React.CSSProperties;
-    voraTollbar: React.CSSProperties;
-  }
-
-  // allow configuration using `createTheme`
-  interface TypographyVariantsOptions {
-    voraMenu?: React.CSSProperties;
-    voraTollbar?: React.CSSProperties;
-  }
 }
 
-// Update the Typography's variant prop options
-declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides {
-    voraMenu: true;
-    voraTollbar: true;
-  }
-}
+export const palleteColors: PalleteColor[] = ['primary', 'secondary', 'error', 'warning', 'info', 'success'];
 
 export default function ThemeCustomization({ children }: ThemeCustomizationProps) {
   const themeDirection = 'ltr';
