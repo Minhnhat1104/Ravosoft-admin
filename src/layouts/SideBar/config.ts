@@ -1,4 +1,11 @@
-import { AppsOutlined, Home, HomeOutlined, LayersOutlined, SvgIconComponent } from '@mui/icons-material';
+import {
+  AppsOutlined,
+  Home,
+  HomeOutlined,
+  LayersOutlined,
+  StorageOutlined,
+  SvgIconComponent,
+} from '@mui/icons-material';
 
 interface NavLeaf {
   label: string;
@@ -153,6 +160,32 @@ export const sidebarItems: NavItem[] = [
             id: 'file_manager',
             type: 'leaf',
             url: '/pages/file_manager',
+          },
+        ],
+      },
+      {
+        label: 'Elements',
+        id: 'elements',
+        icon: StorageOutlined,
+        type: 'collapse',
+        children: [
+          {
+            label: 'Buttons',
+            id: 'buttons',
+            type: 'leaf',
+            url: '/pages/elements/buttons',
+          },
+          {
+            label: 'Chips',
+            id: 'chips',
+            type: 'leaf',
+            url: '/pages/elements/chips',
+          },
+          {
+            label: 'Typography',
+            id: 'typography',
+            type: 'leaf',
+            url: '/pages/elements/typography',
           },
         ],
       },

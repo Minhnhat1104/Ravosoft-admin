@@ -25,6 +25,7 @@ const ResetPassword = lazy(() => import('~/pages/ResetPassword'));
 const UnderConstruction = lazy(() => import('~/pages/UnderConstruction'));
 const Dashboard1 = lazy(() => import('~/pages/Home'));
 const Calendar = lazy(() => import('~/pages/App/Calendar'));
+const ButtonPage = lazy(() => import('~/pages/Elements/ButtonPage'));
 
 const publicRoutes: RouteObject[] = [
   {
@@ -54,6 +55,23 @@ const publicRoutes: RouteObject[] = [
       {
         path: '/pages/calendar',
         element: <Calendar />,
+      },
+      {
+        path: '/pages/elements',
+        children: [
+          {
+            path: 'buttons',
+            element: <ButtonPage />,
+          },
+          {
+            path: 'chips',
+            element: <Profile />,
+          },
+          {
+            path: 'typography',
+            element: <Calendar />,
+          },
+        ],
       },
     ],
   },

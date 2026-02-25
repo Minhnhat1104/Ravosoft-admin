@@ -4,6 +4,7 @@ import { SimplePaletteColorOptions, PaletteColorOptions } from '@mui/material/st
 // ==============================|| DEFAULT THEME - TYPES  ||============================== //
 
 export type PalleteColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success';
+export type MuiVariant = 'text' | 'outlined' | 'contained' | 'light' | 'dashed';
 
 export type PaletteThemeProps = {
   primary: SimplePaletteColorOptions;
