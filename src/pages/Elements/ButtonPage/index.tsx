@@ -35,7 +35,7 @@ const ButtonPage = () => {
   const [size, setSize] = useState<LabelValue<string, 'small' | 'medium' | 'large'>>(sizeOptions[1]);
 
   return (
-    <Stack p={2} height="100%" className="scroll-box">
+    <Stack p={2} height="100%" className="scroll-box" spacing={2}>
       <Stack direction="row" alignItems="center" spacing={2}>
         <FormControlLabel
           control={<Switch value={disabled} onChange={(e, checked) => setDisabled(checked)} />}
@@ -67,8 +67,6 @@ const ButtonPage = () => {
         </Stack>
       </CustomCard>
 
-      <Divider />
-
       <CustomCard sx={{ p: 2 }}>
         <Typography variant="h3">Loading Button</Typography>
 
@@ -94,8 +92,6 @@ const ButtonPage = () => {
           })}
         </Stack>
       </CustomCard>
-
-      <Divider />
 
       <CustomCard sx={{ p: 2 }}>
         <Typography variant="h3">Icon Button</Typography>
