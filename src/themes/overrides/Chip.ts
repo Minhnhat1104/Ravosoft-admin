@@ -1,6 +1,6 @@
 // material-ui
 import { ChipProps } from '@mui/material';
-import { alpha, Theme } from '@mui/material/styles';
+import { alpha, Components, Theme } from '@mui/material/styles';
 
 import { palleteColors } from '..';
 
@@ -15,6 +15,7 @@ export default function ThemeChip(theme: Theme) {
         sizeMedium: {
           fontSize: 12,
           fontWeight: 400,
+          height: 28,
         },
         sizeLarge: {
           fontSize: 14,
@@ -23,6 +24,7 @@ export default function ThemeChip(theme: Theme) {
       },
       defaultProps: {
         shape: 'square' as const,
+        color: 'primary' as const,
       },
       variants: [
         ...palleteColors.map((color) => {
