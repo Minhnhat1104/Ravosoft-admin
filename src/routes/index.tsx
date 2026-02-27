@@ -27,6 +27,7 @@ const Dashboard1 = lazy(() => import('~/pages/Home'));
 const Calendar = lazy(() => import('~/pages/App/Calendar'));
 const ButtonPage = lazy(() => import('~/pages/Elements/ButtonPage'));
 const ChipPage = lazy(() => import('~/pages/Elements/ChipPage'));
+const TypographyPage = lazy(() => import('~/pages/Elements/TypographyPage'));
 
 const publicRoutes: RouteObject[] = [
   {
@@ -70,7 +71,7 @@ const publicRoutes: RouteObject[] = [
           },
           {
             path: 'typography',
-            element: <Calendar />,
+            element: <TypographyPage />,
           },
         ],
       },

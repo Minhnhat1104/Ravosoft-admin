@@ -26,7 +26,7 @@ const CustomCard = ({ sx, children, spacing, title }: CustomCardProps) => {
         <Typography
           variant="h2"
           sx={{
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: 600,
             textTransform: 'uppercase',
             mb: 2,
