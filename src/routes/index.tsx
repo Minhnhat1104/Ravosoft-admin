@@ -28,6 +28,7 @@ const Calendar = lazy(() => import('~/pages/App/Calendar'));
 const ButtonPage = lazy(() => import('~/pages/Elements/ButtonPage'));
 const ChipPage = lazy(() => import('~/pages/Elements/ChipPage'));
 const TypographyPage = lazy(() => import('~/pages/Elements/TypographyPage'));
+const AlertPage = lazy(() => import('~/pages/Elements/AlertPage'));
 
 const publicRoutes: RouteObject[] = [
   {
@@ -61,6 +62,10 @@ const publicRoutes: RouteObject[] = [
       {
         path: '/pages/elements',
         children: [
+          {
+            path: 'alerts',
+            element: <AlertPage />,
+          },
           {
             path: 'buttons',
             element: <ButtonPage />,

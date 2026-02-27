@@ -170,6 +170,12 @@ export const sidebarItems: NavItem[] = [
         type: 'collapse',
         children: [
           {
+            label: 'Alerts',
+            id: 'alerts',
+            type: 'leaf',
+            url: '/pages/elements/alerts',
+          },
+          {
             label: 'Buttons',
             id: 'buttons',
             type: 'leaf',
