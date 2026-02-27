@@ -24,7 +24,10 @@ const Register = lazy(() => import('~/pages/Register'));
 const ResetPassword = lazy(() => import('~/pages/ResetPassword'));
 const UnderConstruction = lazy(() => import('~/pages/UnderConstruction'));
 const Dashboard1 = lazy(() => import('~/pages/Home'));
-const Calendar = lazy(() => import('~/pages/App/Calendar'));
+// Apps
+const Calendar = lazy(() => import('~/pages/Apps/Calendar'));
+const Gallery = lazy(() => import('~/pages/Apps/Gallery'));
+// Elements
 const ButtonPage = lazy(() => import('~/pages/Elements/ButtonPage'));
 const ChipPage = lazy(() => import('~/pages/Elements/ChipPage'));
 const TypographyPage = lazy(() => import('~/pages/Elements/TypographyPage'));
@@ -56,8 +59,17 @@ const publicRoutes: RouteObject[] = [
         element: <Profile />,
       },
       {
-        path: '/pages/calendar',
-        element: <Calendar />,
+        path: '/pages/apps',
+        children: [
+          {
+            path: 'calendar',
+            element: <Calendar />,
+          },
+          {
+            path: 'gallery',
+            element: <Gallery />,
+          },
+        ],
       },
       {
         path: '/pages/elements',
