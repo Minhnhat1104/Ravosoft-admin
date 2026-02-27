@@ -7,6 +7,9 @@ export default function ThemeAlert(theme: Theme) {
   return {
     MuiAlert: {
       styleOverrides: {},
+      defaultProps: {
+        icon: false,
+      },
       variants: [
         ...palleteColors.map((color) => {
           return {
