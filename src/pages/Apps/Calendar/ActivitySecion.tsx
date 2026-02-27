@@ -83,7 +83,7 @@ export default function ActivitySection() {
               {index !== activities.length - 1 && <TimelineConnector sx={{ bgcolor: '#E0E0E0', width: 2 }} />}
             </TimelineSeparator>
 
-            <TimelineContent sx={{ pt: 0, pb: 0, pr: 0 }}>
+            <TimelineContent sx={{ py: 1, pr: 0 }}>
               <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
                 <Typography fontWeight={600}>{item.date}</Typography>
 
