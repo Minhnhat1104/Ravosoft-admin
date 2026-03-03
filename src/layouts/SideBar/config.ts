@@ -157,9 +157,9 @@ export const sidebarItems: NavItem[] = [
           },
           {
             label: 'File-manager',
-            id: 'file_manager',
+            id: 'file-manager',
             type: 'leaf',
-            url: '/pages/apps/file_manager',
+            url: '/pages/apps/file-manager',
           },
           {
             label: 'Gallery',

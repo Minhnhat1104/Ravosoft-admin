@@ -27,6 +27,7 @@ const Dashboard1 = lazy(() => import('~/pages/Home'));
 // Apps
 const Calendar = lazy(() => import('~/pages/Apps/Calendar'));
 const Gallery = lazy(() => import('~/pages/Apps/Gallery'));
+const FileManager = lazy(() => import('~/pages/Apps/FileManager'));
 // Elements
 const ButtonPage = lazy(() => import('~/pages/Elements/ButtonPage'));
 const ChipPage = lazy(() => import('~/pages/Elements/ChipPage'));
@@ -68,6 +69,10 @@ const publicRoutes: RouteObject[] = [
           {
             path: 'gallery',
             element: <Gallery />,
+          },
+          {
+            path: 'file-manager',
+            element: <FileManager />,
           },
         ],
       },
