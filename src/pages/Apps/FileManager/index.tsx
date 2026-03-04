@@ -5,37 +5,21 @@ import { Button, Divider, Grid, Typography } from '@mui/material';
 
 import CustomCard from '~/components/CustomCard';
 
+import Left from './Left';
 import MenuList, { menuItems } from './Left/MenuList';
 import Storage from './Left/Storage';
+import Right from './Right';
 
 const FileManager = () => {
-  const [activeKey, setActiveKey] = useState<string>(menuItems[0]?.value);
-
   return (
     <Grid container spacing={3} sx={{ p: 2, pt: 0 }}>
       <Grid size={{ xs: 12, md: 3 }}>
-        <CustomCard>
-          <Button
-            fullWidth
-            variant="contained"
-            startIcon={<AddOutlined />}
-            // onClick={onCreateFolder}
-            sx={{
-              mb: 2,
-            }}
-          >
-            Create Folder
-          </Button>
-
-          {/* Section 1: MenuList */}
-          <MenuList activeKey={activeKey} onChange={setActiveKey} />
-
-          {/* Section 2: Bottom Section */}
-          <Storage usedGB={26.28} totalGB={140} onUpgrade={() => {}} />
-        </CustomCard>
+        <Left />
       </Grid>
 
-      <Grid size={{ xs: 12, md: 9 }}></Grid>
+      <Grid size={{ xs: 12, md: 9 }}>
+        <Right />
+      </Grid>
     </Grid>
   );
 };

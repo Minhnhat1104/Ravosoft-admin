@@ -2,6 +2,7 @@ import { Button, ButtonGroup, InputAdornment, InputBase, Stack, TextField, Typog
 import Countdown from 'react-countdown';
 import { useNavigate } from 'react-router-dom';
 
+import InputWithButton from '~/components/InputWithButton';
 import { CENTER_BOX_PADDING } from '~/config/constants';
 
 const targetDate = new Date('2026-12-31T23:59:59');
@@ -44,24 +45,14 @@ export default function UnderConstruction() {
         }}
       />
 
-      <ButtonGroup
-        disableElevation
-        variant="contained"
-        aria-label="Disabled button group"
-        sx={{ border: theme.border.main, mt: 6, width: 1 }}
-      >
-        <InputBase placeholder="Enter your Email" sx={{ flex: 1, minWidth: 0, borderTopRightRadius: 0, px: 1.5 }} />
-
-        <Button
-          variant="contained"
-          sx={{ height: 1 }}
-          onClick={() => {
-            navigate('/home');
-          }}
-        >
-          Subscribe
-        </Button>
-      </ButtonGroup>
+      <InputWithButton
+        placeholder="Enter your Email"
+        textButton="Subscribe"
+        onClick={() => {
+          navigate('/home');
+        }}
+        sx={{ mt: 6 }}
+      />
     </Stack>
   );
 }
