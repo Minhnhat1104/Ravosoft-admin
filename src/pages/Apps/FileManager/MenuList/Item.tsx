@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material';
 
 import { MenuItemConfig } from '.';
 
@@ -11,32 +11,41 @@ type Props = {
 };
 
 export function Item({ item, selected, onClick }: Props) {
+  const theme = useTheme();
+  const Icon = item.icon;
   return (
     <ListItemButton
       selected={selected}
       onClick={() => onClick?.(item.value)}
       sx={{
-        borderRadius: 1.5,
-        px: 1.25,
-        py: 1,
-        '&.Mui-selected': { bgcolor: 'rgba(0, 180, 140, 0.12)' },
-        '&.Mui-selected:hover': { bgcolor: 'rgba(0, 180, 140, 0.16)' },
+        // borderRadius: 1.5,
+        // px: 1.25,
+        // py: 1,
+        color: selected ? 'primary.main' : 'text.secondary',
+        '&.Mui-selected': { bgcolor: theme.palette.primary.lighter },
+        '&.Mui-selected:hover': { bgcolor: theme.palette.primary.lighter },
       }}
     >
       <ListItemIcon
         sx={{
           minWidth: 36,
-          color: selected ? 'primary.main' : 'text.secondary',
+          color: 'inherit',
         }}
       >
-        {item.icon}
+        <Icon sx={{ fontSize: 20 }} />
       </ListItemIcon>
 
       <ListItemText
         primary={item.label}
-        primaryTypographyProps={{
-          fontSize: 14,
-          fontWeight: selected ? 600 : 500,
+        slotProps={{
+          primary: {
+            sx: {
+              fontSize: 14,
+            },
+          },
+        }}
+        sx={{
+          color: 'inherit',
         }}
       />
     </ListItemButton>

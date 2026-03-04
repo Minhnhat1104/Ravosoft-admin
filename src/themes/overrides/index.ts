@@ -6,10 +6,18 @@ import ThemeAlert from './Alert';
 import ThemeBadge from './Badge';
 import ThemeButton from './Button';
 import ThemeChip from './Chip';
+import ThemeMuiListItemButton from './ListItemButton';
 import ThemeTextField from './TextField';
 
 // ==============================|| OVERRIDES - MAIN ||============================== //
 
 export default function ComponentsOverrides(theme: Theme) {
-  return merge(ThemeAlert(theme), ThemeButton(theme), ThemeBadge(theme), ThemeTextField(theme), ThemeChip(theme));
+  return merge(
+    ThemeAlert(theme),
+    ThemeButton(theme),
+    ThemeBadge(theme),
+    ThemeTextField(theme),
+    ThemeChip(theme),
+    ThemeMuiListItemButton(theme)
+  );
 }

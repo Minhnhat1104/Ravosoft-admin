@@ -10,7 +10,7 @@ function Storage({ usedGB, totalGB, onUpgrade }: StorageProps) {
   const percent = Math.min(100, Math.max(0, (usedGB / totalGB) * 100));
 
   return (
-    <Box sx={{ mt: 2 }}>
+    <Box sx={{ mt: 4 }}>
       <Typography sx={{ fontSize: 14, fontWeight: 700, mb: 1 }}>Storage</Typography>
 
       <LinearProgress
