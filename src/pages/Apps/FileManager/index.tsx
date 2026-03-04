@@ -12,7 +12,7 @@ const FileManager = () => {
   const [activeKey, setActiveKey] = useState<string>(menuItems[0]?.value);
 
   return (
-    <Grid container spacing={3} sx={{ p: 2 }}>
+    <Grid container spacing={3} sx={{ p: 2, pt: 0 }}>
       <Grid size={{ xs: 12, md: 3 }}>
         <CustomCard>
           <Button

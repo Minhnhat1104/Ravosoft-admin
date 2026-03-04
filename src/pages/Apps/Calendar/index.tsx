@@ -73,7 +73,7 @@ export default function Calendar() {
   }, []);
 
   return (
-    <Grid container spacing={3} sx={{ p: 2 }}>
+    <Grid container spacing={3} sx={{ p: 2, pt: 0 }}>
       <Grid size={{ md: 3 }}>
         <CustomCard sx={{ p: 2 }}>
           <Button variant="text" sx={{ mb: 1 }}>

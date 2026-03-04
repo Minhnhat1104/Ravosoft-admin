@@ -20,7 +20,7 @@ const PageTitle = () => {
       title = title + ' - ' + lastItem?.label;
     }
     document.title = title;
-  }, [lastItem.id]);
+  }, [lastItem?.id]);
 
   return (
     <Stack direction="row" sx={{ width: 1, alignItems: 'center', justifyContent: 'space-between', p: 2 }}>
