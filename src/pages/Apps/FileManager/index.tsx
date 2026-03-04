@@ -5,8 +5,8 @@ import { Button, Divider, Grid, Typography } from '@mui/material';
 
 import CustomCard from '~/components/CustomCard';
 
-import MenuList, { menuItems } from './MenuList';
-import Storage from './Storage';
+import MenuList, { menuItems } from './Left/MenuList';
+import Storage from './Left/Storage';
 
 const FileManager = () => {
   const [activeKey, setActiveKey] = useState<string>(menuItems[0]?.value);
