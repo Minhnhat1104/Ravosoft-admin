@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Breadcrumbs, Stack, Typography } from '@mui/material';
 import { Link, matchRoutes, useLocation } from 'react-router-dom';
+
+import { PAGE_TITLE } from '~/config/constants';
 
 import { isNavLeaf } from '../SideBar/config';
 import { getBreadcrumbItems } from '../SideBar/helper';
@@ -11,6 +13,14 @@ const PageTitle = () => {
   const items = getBreadcrumbItems(pathname);
 
   const lastItem = items[items?.length - 1];
+
+  useEffect(() => {
+    let title = PAGE_TITLE;
+    if (lastItem?.label) {
+      title = title + ' - ' + lastItem?.label;
+    }
+    document.title = title;
+  }, [lastItem.id]);
 
   return (
     <Stack direction="row" sx={{ width: 1, alignItems: 'center', justifyContent: 'space-between', p: 2 }}>

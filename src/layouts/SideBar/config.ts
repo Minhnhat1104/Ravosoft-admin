@@ -156,7 +156,7 @@ export const sidebarItems: NavItem[] = [
             url: '/pages/apps/contacts',
           },
           {
-            label: 'File-manager',
+            label: 'File manager',
             id: 'file-manager',
             type: 'leaf',
             url: '/pages/apps/file-manager',

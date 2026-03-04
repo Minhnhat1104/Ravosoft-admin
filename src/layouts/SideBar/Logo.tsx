@@ -4,6 +4,7 @@ import { Stack, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import logo from '~/assets/img/favicon.ico';
+import { PAGE_TITLE } from '~/config/constants';
 
 const Logo = () => {
   const theme = useTheme();
@@ -20,7 +21,7 @@ const Logo = () => {
     >
       {/* <img style={{ width: 40, height: 40 }} src={logo} alt="Logo" /> */}
       <Typography fontWeight="500" fontSize={24}>
-        Ravosoft
+        {PAGE_TITLE}
       </Typography>
     </Stack>
   );
