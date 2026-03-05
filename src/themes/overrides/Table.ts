@@ -1,7 +1,69 @@
 // material-ui
 import { alpha, Theme } from '@mui/material/styles';
 
+import { palleteColors } from '..';
+
 export default function ThemeTable(theme: Theme) {
+  const customVariants = palleteColors?.reduce((prev: any[], color) => {
+    const { darker, dark, main, light, lighter } = theme.palette[color];
+
+    prev.push({
+      props: { color },
+      style: {
+        '& .MuiTableCell-root': {
+          borderBottom: `1px solid ${light}`,
+        },
+      },
+    });
+
+    prev.push({
+      props: { variant: 'bordered' as const, color },
+      style: {
+        '& .MuiTableCell-root': {
+          border: `1px solid ${light}`,
+        },
+      },
+    });
+
+    prev.push({
+      props: { variant: 'filled' as const, color },
+      style: {
+        '& .MuiTableCell-root': {
+          background: lighter,
+        },
+        '& .MuiTableBody-root .MuiTableRow-root:last-child .MuiTableCell-root': {
+          borderBottom: 'none',
+        },
+      },
+    });
+
+    prev.push({
+      props: { variant: 'striped-row' as const, color },
+      style: {
+        '& .MuiTableCell-root': {
+          borderBottom: main,
+        },
+        '& .MuiTableRow-root:nth-of-type(even)': {
+          background: lighter,
+        },
+      },
+    });
+
+    prev.push({
+      props: { variant: 'striped-col' as const, color },
+      style: {
+        '& .MuiTableCell-root': {
+          borderBottom: main,
+        },
+        '& .MuiTableCell-root:nth-of-type(even)': {
+          background: lighter,
+        },
+      },
+    });
+
+    return prev;
+  }, []);
+
   return {
     MuiTableContainer: {
       styleOverrides: {
@@ -49,6 +111,7 @@ export default function ThemeTable(theme: Theme) {
             },
           },
         },
+        ...customVariants,
       ],
     },
   };

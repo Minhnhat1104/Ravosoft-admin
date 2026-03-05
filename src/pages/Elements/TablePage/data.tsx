@@ -11,6 +11,8 @@ type UserRecord = {
   email: string;
 };
 
+export const tableColors: (PalleteColor | undefined)[] = [undefined, 'primary', 'warning'];
+
 export const users: UserRecord[] = [
   {
     name: 'John',
