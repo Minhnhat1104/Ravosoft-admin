@@ -4,7 +4,7 @@ import { alpha, Theme } from '@mui/material/styles';
 import { palleteColors } from '..';
 
 export default function ThemeTable(theme: Theme) {
-  const customVariants = palleteColors?.reduce((prev: any[], color) => {
+  const customTableVariants = palleteColors?.reduce((prev: any[], color) => {
     const { darker, dark, main, light, lighter } = theme.palette[color];
 
     prev.push({
@@ -111,7 +111,7 @@ export default function ThemeTable(theme: Theme) {
             },
           },
         },
-        ...customVariants,
+        ...customTableVariants,
       ],
     },
   };
