@@ -199,6 +199,12 @@ export const sidebarItems: NavItem[] = [
             type: 'leaf',
             url: '/pages/elements/typography',
           },
+          {
+            label: 'Table',
+            id: 'table',
+            type: 'leaf',
+            url: '/pages/elements/table',
+          },
         ],
       },
     ],

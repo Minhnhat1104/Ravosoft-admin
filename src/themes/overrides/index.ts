@@ -7,6 +7,7 @@ import ThemeBadge from './Badge';
 import ThemeButton from './Button';
 import ThemeChip from './Chip';
 import ThemeMuiListItemButton from './ListItemButton';
+import ThemeTable from './Table';
 import ThemeTextField from './TextField';
 
 // ==============================|| OVERRIDES - MAIN ||============================== //
@@ -18,6 +19,7 @@ export default function ComponentsOverrides(theme: Theme) {
     ThemeBadge(theme),
     ThemeTextField(theme),
     ThemeChip(theme),
-    ThemeMuiListItemButton(theme)
+    ThemeMuiListItemButton(theme),
+    ThemeTable(theme)
   );
 }
