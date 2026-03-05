@@ -63,7 +63,7 @@ const Gallery = () => {
   const [activeImage, setActiveImage] = useState('');
   return (
     <>
-      <Grid container spacing={3} p={2}>
+      <Grid container spacing={3} p={2} pt={0}>
         {images?.map((_item) => (
           <Grid key={_item.id} size={{ xs: 12, sm: 4, md: 3 }}>
             <img

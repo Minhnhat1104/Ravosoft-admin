@@ -9,7 +9,7 @@ interface ChipPageProps {}
 
 const ChipPage = () => {
   return (
-    <Stack p={2} height="100%" className="scroll-box" spacing={2}>
+    <Stack p={2} pt={0} height="100%" className="scroll-box" spacing={2}>
       <Grid container spacing={3}>
         <Grid size={{ xs: 12, md: 6 }}>
           <CustomCard title="Chip">

@@ -35,7 +35,7 @@ const ButtonPage = () => {
   const [size, setSize] = useState<LabelValue<string, 'small' | 'medium' | 'large'>>(sizeOptions[1]);
 
   return (
-    <Stack p={2} height="100%" className="scroll-box" spacing={2}>
+    <Stack p={2} pt={0} height="100%" className="scroll-box" spacing={2}>
       <Stack direction="row" alignItems="center" spacing={2}>
         <FormControlLabel
           control={<Switch value={disabled} onChange={(e, checked) => setDisabled(checked)} />}
