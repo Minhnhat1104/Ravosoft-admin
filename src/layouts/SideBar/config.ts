@@ -205,6 +205,12 @@ export const sidebarItems: NavItem[] = [
             type: 'leaf',
             url: '/pages/elements/table',
           },
+          {
+            label: 'Pagination',
+            id: 'pagination',
+            type: 'leaf',
+            url: '/pages/elements/pagination',
+          },
         ],
       },
     ],

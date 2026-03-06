@@ -8,8 +8,4 @@ declare module '@mui/material/Pagination' {
     warning;
     info;
   }
-  interface PaginationPropsVariantOverrides {
-    contained;
-    combined;
-  }
 }

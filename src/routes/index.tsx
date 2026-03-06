@@ -34,6 +34,7 @@ const ChipPage = lazy(() => import('~/pages/Elements/ChipPage'));
 const TypographyPage = lazy(() => import('~/pages/Elements/TypographyPage'));
 const AlertPage = lazy(() => import('~/pages/Elements/AlertPage'));
 const TablePage = lazy(() => import('~/pages/Elements/TablePage'));
+const PaginationPage = lazy(() => import('~/pages/Elements/PaginationPage'));
 
 const publicRoutes: RouteObject[] = [
   {
@@ -99,6 +100,10 @@ const publicRoutes: RouteObject[] = [
           {
             path: 'table',
             element: <TablePage />,
+          },
+          {
+            path: 'pagination',
+            element: <PaginationPage />,
           },
         ],
       },
