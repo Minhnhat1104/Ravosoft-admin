@@ -13,15 +13,7 @@ export type PaletteThemeProps = {
   warning: SimplePaletteColorOptions;
   info: SimplePaletteColorOptions;
   success: SimplePaletteColorOptions;
-  grey: PaletteColorOptions;
-  // add new by Mr.Kim
-  magenta: SimplePaletteColorOptions;
-  purple: SimplePaletteColorOptions;
-  orange: SimplePaletteColorOptions;
-  yellow: SimplePaletteColorOptions;
-  lime: SimplePaletteColorOptions;
-  volcano: SimplePaletteColorOptions;
-  header: string;
+  grey: SimplePaletteColorOptions;
   link: string;
 };
 

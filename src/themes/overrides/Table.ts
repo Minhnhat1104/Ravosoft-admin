@@ -5,7 +5,7 @@ import { palleteColors } from '..';
 
 export default function ThemeTable(theme: Theme) {
   const customTableVariants = palleteColors?.reduce((prev: any[], color) => {
-    const { darker, dark, main, light, lighter } = theme.palette[color];
+    const { darker, dark, main, light, lighter, 100: color100 } = theme.palette[color];
 
     prev.push({
       props: { color },
@@ -41,10 +41,16 @@ export default function ThemeTable(theme: Theme) {
       props: { variant: 'striped-row' as const, color },
       style: {
         '& .MuiTableCell-root': {
-          borderBottom: main,
+          borderBottom: 'none',
+        },
+        '& .MuiTableHead-root .MuiTableRow-root:first-child': {
+          background: lighter,
         },
         '& .MuiTableRow-root:nth-of-type(even)': {
           background: lighter,
+        },
+        '& .MuiTableRow-root:nth-of-type(odd)': {
+          background: color100,
         },
       },
     });
@@ -53,10 +59,13 @@ export default function ThemeTable(theme: Theme) {
       props: { variant: 'striped-col' as const, color },
       style: {
         '& .MuiTableCell-root': {
-          borderBottom: main,
+          borderBottom: 'none',
+        },
+        '& .MuiTableCell-root:nth-of-type(odd)': {
+          background: lighter,
         },
         '& .MuiTableCell-root:nth-of-type(even)': {
-          background: lighter,
+          background: color100,
         },
       },
     });
@@ -99,7 +108,7 @@ export default function ThemeTable(theme: Theme) {
           props: { variant: 'striped-row' as const },
           style: {
             '& .MuiTableRow-root:nth-of-type(even)': {
-              background: theme.palette.background.softGrey,
+              background: theme.palette.background.darkGrey,
             },
           },
         },
@@ -107,7 +116,7 @@ export default function ThemeTable(theme: Theme) {
           props: { variant: 'striped-col' as const },
           style: {
             '& .MuiTableCell-root:nth-of-type(even)': {
-              background: theme.palette.background.softGrey,
+              background: theme.palette.background.darkGrey,
             },
           },
         },

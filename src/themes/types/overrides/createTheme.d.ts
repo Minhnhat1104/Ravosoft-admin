@@ -6,13 +6,6 @@ import { CustomShadowProps } from '~/themes/types/theme';
 
 declare module '@mui/material/styles' {
   interface CustomPalette {
-    magenta: SimplePaletteColorOptions;
-    purple: SimplePaletteColorOptions;
-    orange: SimplePaletteColorOptions;
-    yellow: SimplePaletteColorOptions;
-    lime: SimplePaletteColorOptions;
-    volcano: SimplePaletteColorOptions;
-    header: string;
     link: string;
     border: {
       light: string;
@@ -33,6 +26,7 @@ declare module '@mui/material/styles' {
 
   interface TypeBackground {
     softGrey: string;
+    darkGrey: string;
   }
 }
 

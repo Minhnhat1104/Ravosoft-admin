@@ -1,168 +1,118 @@
 import { type PalettesProps } from '@ant-design/colors';
-import { type PaletteColorOptions } from '@mui/material/styles';
+import { SimplePaletteColorOptions, type PaletteColorOptions } from '@mui/material/styles';
 
 import { type PaletteThemeProps } from '~/themes/types/theme';
 
-const Default = (colors: PalettesProps): PaletteThemeProps => {
-  const { blue, red, gold, cyan, green, grey, magenta, purple, orange, yellow, lime, volcano } = colors;
-  const greyColors: PaletteColorOptions = {
-    0: grey[0],
-    50: grey[1],
-    100: grey[2],
-    200: grey[3],
-    300: grey[4],
-    400: grey[5],
-    500: grey[6],
-    600: grey[7],
-    700: grey[8],
-    800: grey[9],
-    900: grey[10],
+const getPalleteColors = (colors: string[], contrastText = '#fff'): SimplePaletteColorOptions => {
+  return {
+    lighter: colors[0],
+    light: colors[3],
+    main: colors[5],
+    dark: colors[6],
+    darker: colors[8],
+    contrastText,
+    50: colors[0],
+    100: colors[1],
+    200: colors[2],
+    300: colors[3],
+    400: colors[4],
+    500: colors[5],
+    600: colors[6],
+    700: colors[7],
+    800: colors[8],
+    900: colors[9],
   };
+};
 
-  const contrastText = '#fff';
-
+// https://m2.material.io/inline-tools/color/
+const Default = (colors: PalettesProps): PaletteThemeProps => {
   const primary = [
-    '#006248',
-    '#007f65',
-    '#009074',
-    '#00a184',
-    '#00af92',
-    '#00bda3',
-    '#38cab4',
-    '#7bdaca',
-    '#b1e8df',
     '#e0f6f3',
-  ]?.reverse();
+    '#b1e8df',
+    '#7bdaca',
+    '#38cab4',
+    '#00bda3',
+    '#00af92',
+    '#00a184',
+    '#009074',
+    '#007f65',
+    '#006248',
+  ];
+
+  const grey = [
+    '#fbfbfb',
+    '#f6f6f6',
+    '#f1f1f1',
+    '#e5e5e5',
+    '#c2c2c2',
+    '#a4a4a4',
+    '#7a7a7a',
+    '#666666',
+    '#474747',
+    '#252525',
+  ];
+
+  const red = [
+    '#ffebef',
+    '#ffcdd4',
+    '#f99a9b',
+    '#f37174',
+    '#ffa5d0',
+    '#ff3733',
+    '#f72d34',
+    '#e41f2d',
+    '#d71426',
+    '#c80019',
+  ];
+
+  const gold = [
+    '#fff7e1',
+    '#feeab3',
+    '#fddc83',
+    '#fdc051',
+    '#fbc42e',
+    '#fabb18',
+    '#faad14',
+    '#f99b13',
+    '#f98a13',
+    '#f76b12',
+  ];
+
+  const green = [
+    '#ecf8e6',
+    '#d0eec0',
+    '#b0e297',
+    '#8dd66b',
+    '#71cd47',
+    '#53c41a',
+    '#42b411',
+    '#26a001',
+    '#008c00',
+    '#006a00',
+  ];
+
+  const cyan = [
+    '#fdf4f5',
+    '#ade4e5',
+    '#72d4d5',
+    '#13c2c2',
+    '#00b4b2',
+    '#00a5a1',
+    '#009792',
+    '#008781',
+    '#007770',
+    '#005a51',
+  ];
 
   return {
-    // primary: {
-    //   lighter: blue[0],
-    //   100: blue[1],
-    //   200: blue[2],
-    //   light: blue[3],
-    //   400: blue[4],
-    //   main: blue[5],
-    //   dark: blue[6],
-    //   700: blue[7],
-    //   darker: blue[8],
-    //   900: blue[9],
-    //   contrastText,
-    // },
-    primary: {
-      lighter: primary[0],
-      100: primary[1],
-      200: primary[2],
-      light: primary[3],
-      400: primary[4],
-      main: primary[5],
-      dark: primary[6],
-      700: primary[7],
-      darker: primary[8],
-      900: primary[9],
-      contrastText,
-    },
-    secondary: {
-      lighter: greyColors[100],
-      100: greyColors[100],
-      200: greyColors[200],
-      light: greyColors[300],
-      400: greyColors[400],
-      main: greyColors[500]!,
-      600: greyColors[600],
-      dark: greyColors[700],
-      800: greyColors[800],
-      darker: greyColors[900],
-      contrastText: greyColors[0],
-    },
-    error: {
-      lighter: red[0],
-      light: red[2],
-      main: red[4],
-      500: red[5],
-      dark: red[7],
-      darker: red[9],
-      contrastText,
-    },
-    warning: {
-      lighter: gold[0],
-      light: gold[3],
-      main: gold[5],
-      dark: gold[7],
-      darker: gold[9],
-      contrastText: greyColors[100],
-    },
-    info: {
-      lighter: cyan[0],
-      light: cyan[3],
-      main: cyan[5],
-      600: cyan[6],
-      dark: cyan[7],
-      darker: cyan[9],
-      contrastText,
-    },
-    success: {
-      lighter: green[0],
-      light: green[3],
-      400: green[4],
-      main: green[5],
-      600: green[6],
-      dark: green[7],
-      darker: green[9],
-      contrastText,
-    },
-    grey: greyColors,
-    magenta: {
-      lighter: magenta[0],
-      light: magenta[3],
-      main: magenta[5],
-      dark: magenta[7],
-      darker: magenta[9],
-      contrastText,
-    },
-    yellow: {
-      lighter: yellow[0],
-      light: yellow[3],
-      main: yellow[5],
-      600: yellow[6],
-      dark: yellow[7],
-      darker: yellow[9],
-      contrastText,
-    },
-    purple: {
-      lighter: purple[0],
-      light: purple[3],
-      400: purple[4],
-      main: purple[5],
-      dark: purple[7],
-      darker: purple[9],
-      contrastText,
-    },
-    orange: {
-      lighter: orange[0],
-      light: orange[3],
-      main: orange[5],
-      dark: orange[7],
-      darker: orange[9],
-      contrastText,
-    },
-    lime: {
-      lighter: lime[0],
-      light: lime[3],
-      main: lime[5],
-      dark: lime[7],
-      darker: lime[9],
-      contrastText,
-    },
-    volcano: {
-      lighter: volcano[0],
-      light: volcano[3],
-      main: volcano[5],
-      dark: volcano[7],
-      darker: volcano[9],
-      contrastText,
-    },
-    header: '#1e1e1e',
-    link: blue[5],
+    primary: getPalleteColors(primary),
+    secondary: getPalleteColors(grey),
+    error: getPalleteColors(red),
+    warning: getPalleteColors(gold),
+    info: getPalleteColors(cyan),
+    success: getPalleteColors(green),
+    grey: getPalleteColors(grey),
+    link: getPalleteColors(primary).main,
   };
 };
 

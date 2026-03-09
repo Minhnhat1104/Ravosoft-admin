@@ -105,8 +105,6 @@ export default function ThemeCustomization({ children }: ThemeCustomizationProps
           '--color-gray-400': theme.palette.grey[400],
           '--color-gray-500': theme.palette.grey[500],
           '--color-red': theme.palette.error.main,
-          '--color-purple': theme.palette.purple.main,
-          '--color-orange': theme.palette.orange.main,
           '--separator-border': `${theme.palette.divider} !important`,
         },
       }}
