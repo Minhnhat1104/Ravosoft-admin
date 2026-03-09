@@ -30,9 +30,7 @@ export default function ThemeTable(theme: Theme) {
       style: {
         '& .MuiTableCell-root': {
           background: lighter,
-        },
-        '& .MuiTableBody-root .MuiTableRow-root:last-child .MuiTableCell-root': {
-          borderBottom: 'none',
+          borderBottom: `1px solid ${color100}`,
         },
       },
     });
@@ -101,6 +99,40 @@ export default function ThemeTable(theme: Theme) {
           style: {
             '& .MuiTableCell-root': {
               border: theme.border.main,
+            },
+          },
+        },
+        {
+          props: { variant: 'filled' as const },
+          style: {
+            '& .MuiTableCell-root': {
+              background: theme.palette.background.darkGrey,
+              borderBottom: theme.border.main,
+            },
+            '& .MuiTableRow-head': {
+              '& .MuiTableCell-head': {
+                '&:first-of-type': {
+                  borderTopLeftRadius: 8,
+                },
+                '&:last-of-type': {
+                  borderTopRightRadius: 8,
+                },
+              },
+            },
+            '& .MuiTableBody-root': {
+              '& .MuiTableRow-root:last-of-type': {
+                '& .MuiTableCell-root': {
+                  '&:first-of-type': {
+                    borderBottomLeftRadius: 8,
+                  },
+                  '&:last-of-type': {
+                    borderBottomRightRadius: 8,
+                  },
+                },
+              },
+            },
+            '& .MuiTableBody-root .MuiTableRow-root:last-child .MuiTableCell-root': {
+              borderBottom: 'none',
             },
           },
         },
