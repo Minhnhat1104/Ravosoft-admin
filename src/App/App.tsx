@@ -16,7 +16,7 @@ import { RecoilRoot } from 'recoil';
 
 import LoadingCircular from '~/components/LoadingCircular';
 import ToastContext from '~/contexts/ToastContext';
-import ErrorFallback from '~/pages/ErrorFallback';
+import ErrorFallback from '~/pages/Authentication/ErrorFallback';
 import publicRoutes from '~/routes';
 import ThemeCustomization from '~/themes';
 

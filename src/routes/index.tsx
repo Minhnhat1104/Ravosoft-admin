@@ -6,23 +6,23 @@ import AuthGuardContext from '~/contexts/AuthGuardContext';
 import AxiosContext from '~/contexts/AxiosContext';
 import GuestGuardContext from '~/contexts/GuestGuardContext';
 import AboutUs from '~/pages/AboutUs';
+import ErrorFallback from '~/pages/Authentication/ErrorFallback';
 import { demoRoute } from '~/pages/Demo/demoRoute';
-import ErrorFallback from '~/pages/ErrorFallback';
 
 const DefaultLayout = lazy(() => import('~/layouts/DefaultLayout'));
 const BackgroundLayout = lazy(() => import('~/layouts/BackgroundLayout'));
 
-const Lockscreen = lazy(() => import('~/pages/Lockscreen'));
-const ChangePassword = lazy(() => import('~/pages/ChangePassword'));
+const Lockscreen = lazy(() => import('~/pages/Authentication/Lockscreen'));
+const ChangePassword = lazy(() => import('~/pages/Authentication/ChangePassword'));
 const Demo = lazy(() => import('~/pages/Demo'));
-const ForgetPassword = lazy(() => import('~/pages/ForgetPassword'));
+const ForgetPassword = lazy(() => import('~/pages/Authentication/ForgetPassword'));
 const Home = lazy(() => import('~/pages/Home'));
-const Login = lazy(() => import('~/pages/Login'));
-const NotFound = lazy(() => import('~/pages/ErrorFallback'));
+const Login = lazy(() => import('~/pages/Authentication/Login'));
+const NotFound = lazy(() => import('~/pages/Authentication/ErrorFallback'));
 const Profile = lazy(() => import('~/pages/Profile'));
-const Register = lazy(() => import('~/pages/Register'));
-const ResetPassword = lazy(() => import('~/pages/ResetPassword'));
-const UnderConstruction = lazy(() => import('~/pages/UnderConstruction'));
+const Register = lazy(() => import('~/pages/Authentication/Register'));
+const ResetPassword = lazy(() => import('~/pages/Authentication/ResetPassword'));
+const UnderConstruction = lazy(() => import('~/pages/Authentication/UnderConstruction'));
 const Dashboard1 = lazy(() => import('~/pages/Home'));
 // Apps
 const Calendar = lazy(() => import('~/pages/Apps/Calendar'));
