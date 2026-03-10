@@ -10,11 +10,11 @@ import SalesAndPurchase from './SalesAndPurchase';
 import SecondaryStats from './SecondaryStats';
 import TopSellingProducts from './TopSellingProducts';
 
-interface HomeProps {}
+interface Dashboard1Props {}
 
 export const WIDGET_SPACING = 3;
 
-function Home({}: HomeProps) {
+function Dashboard1({}: Dashboard1Props) {
   const theme = useTheme();
   return (
     <Stack sx={{ width: 1, p: 2 }}>
@@ -70,4 +70,4 @@ function Home({}: HomeProps) {
   );
 }
 
-export default Home;
+export default Dashboard1;

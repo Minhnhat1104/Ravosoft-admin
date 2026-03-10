@@ -16,14 +16,13 @@ const Lockscreen = lazy(() => import('~/pages/Authentication/Lockscreen'));
 const ChangePassword = lazy(() => import('~/pages/Authentication/ChangePassword'));
 const Demo = lazy(() => import('~/pages/Demo'));
 const ForgetPassword = lazy(() => import('~/pages/Authentication/ForgetPassword'));
-const Home = lazy(() => import('~/pages/Home'));
 const Login = lazy(() => import('~/pages/Authentication/Login'));
 const NotFound = lazy(() => import('~/pages/Authentication/ErrorFallback'));
 const Profile = lazy(() => import('~/pages/Profile'));
 const Register = lazy(() => import('~/pages/Authentication/Register'));
 const ResetPassword = lazy(() => import('~/pages/Authentication/ResetPassword'));
 const UnderConstruction = lazy(() => import('~/pages/Authentication/UnderConstruction'));
-const Dashboard1 = lazy(() => import('~/pages/Home'));
+const Dashboard1 = lazy(() => import('~/pages/Dashboard1'));
 // Apps
 const Calendar = lazy(() => import('~/pages/Apps/Calendar'));
 const Gallery = lazy(() => import('~/pages/Apps/Gallery'));
@@ -44,7 +43,7 @@ const publicRoutes: RouteObject[] = [
     children: [
       {
         path: '/home',
-        element: <Home />,
+        element: <Dashboard1 />,
       },
       {
         path: '/dashboard/dashboard-1',
