@@ -3,6 +3,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import './lang/index';
+import './string.extensions';
 import App from './App/App';
 
 createRoot(document.getElementById('root')!).render(
