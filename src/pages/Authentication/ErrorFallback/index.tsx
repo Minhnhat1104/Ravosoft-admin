@@ -38,7 +38,7 @@ const ErrorFallback = ({ code, message }: ErrorFallback) => {
           </Typography>
         </>
       )}
-      <Button component={Link} color="secondary" variant="contained" sx={{ mt: 3 }} to="/home">
+      <Button component={Link} color="secondary" variant="contained" sx={{ mt: 3 }} to="/dashboard/dashboard-1">
         Back to Home
       </Button>
     </Stack>

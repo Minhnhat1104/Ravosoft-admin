@@ -6,7 +6,6 @@ import AuthGuardContext from '~/contexts/AuthGuardContext';
 import AxiosContext from '~/contexts/AxiosContext';
 import GuestGuardContext from '~/contexts/GuestGuardContext';
 import AboutUs from '~/pages/AboutUs';
-import ErrorFallback from '~/pages/Authentication/ErrorFallback';
 import { demoRoute } from '~/pages/Demo/demoRoute';
 
 const DefaultLayout = lazy(() => import('~/layouts/DefaultLayout'));
@@ -17,7 +16,7 @@ const ChangePassword = lazy(() => import('~/pages/Authentication/ChangePassword'
 const Demo = lazy(() => import('~/pages/Demo'));
 const ForgetPassword = lazy(() => import('~/pages/Authentication/ForgetPassword'));
 const Login = lazy(() => import('~/pages/Authentication/Login'));
-const NotFound = lazy(() => import('~/pages/Authentication/ErrorFallback'));
+const ErrorFallback = lazy(() => import('~/pages/Authentication/ErrorFallback'));
 const Profile = lazy(() => import('~/pages/Profile'));
 const Register = lazy(() => import('~/pages/Authentication/Register'));
 const ResetPassword = lazy(() => import('~/pages/Authentication/ResetPassword'));
@@ -41,10 +40,6 @@ const publicRoutes: RouteObject[] = [
   {
     element: <DefaultLayout />,
     children: [
-      {
-        path: '/home',
-        element: <Dashboard1 />,
-      },
       {
         path: '/dashboard/dashboard-1',
         element: <Dashboard1 />,
@@ -199,7 +194,7 @@ const publicRoutes: RouteObject[] = [
   },
   {
     index: true,
-    element: <Navigate to="/home" />,
+    element: <Navigate to="/dashboard/dashboard-1" />,
   },
 ];
 

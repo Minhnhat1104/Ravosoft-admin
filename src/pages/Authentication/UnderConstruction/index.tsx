@@ -49,7 +49,7 @@ export default function UnderConstruction() {
         placeholder="Enter your Email"
         textButton="Subscribe"
         onClick={() => {
-          navigate('/home');
+          navigate('/dashboard/dashboard-1');
         }}
         sx={{ mt: 6 }}
       />

@@ -10,7 +10,7 @@ export const userState = atom<User | null>({
 
 export const loginPathState = atom<string>({
   key: 'loginPathAtom',
-  default: '/home',
+  default: '/dashboard/dashboard-1',
 });
 
 export const sidebarActiveState = atom<NavItem | null>({

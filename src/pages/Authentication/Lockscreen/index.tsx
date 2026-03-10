@@ -62,7 +62,7 @@ function Lockscreen() {
     //     },
     //   }
     // );
-    navigate('/home');
+    navigate('/dashboard/dashboard-1');
   };
 
   return (
