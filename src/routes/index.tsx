@@ -35,6 +35,8 @@ const TypographyPage = lazy(() => import('~/pages/Elements/TypographyPage'));
 const AlertPage = lazy(() => import('~/pages/Elements/AlertPage'));
 const TablePage = lazy(() => import('~/pages/Elements/TablePage'));
 const PaginationPage = lazy(() => import('~/pages/Elements/PaginationPage'));
+// Forms
+const InputPage = lazy(() => import('~/pages/Forms/InputPage'));
 
 const publicRoutes: RouteObject[] = [
   {
@@ -75,6 +77,43 @@ const publicRoutes: RouteObject[] = [
           {
             path: 'file-manager',
             element: <FileManager />,
+          },
+        ],
+      },
+      {
+        path: '/pages/forms',
+        children: [
+          {
+            path: 'input',
+            element: <InputPage />,
+          },
+          {
+            path: 'checkbox',
+            element: <></>,
+          },
+          {
+            path: 'radio',
+            element: <></>,
+          },
+          {
+            path: 'select',
+            element: <></>,
+          },
+          {
+            path: 'range-slider',
+            element: <></>,
+          },
+          {
+            path: 'file-upload',
+            element: <></>,
+          },
+          {
+            path: 'date-time-picker',
+            element: <></>,
+          },
+          {
+            path: 'color-picker',
+            element: <></>,
           },
         ],
       },
