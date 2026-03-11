@@ -39,6 +39,7 @@ const SliderPage = lazy(() => import('~/pages/Forms/SliderPage'));
 const CheckboxPage = lazy(() => import('~/pages/Forms/CheckboxPage'));
 const RadioPage = lazy(() => import('~/pages/Forms/RadioPage'));
 const SelectPage = lazy(() => import('~/pages/Forms/SelectPage'));
+const FileUploadPage = lazy(() => import('~/pages/Forms/FileUploadPage'));
 
 const publicRoutes: RouteObject[] = [
   {
@@ -103,7 +104,7 @@ const publicRoutes: RouteObject[] = [
           },
           {
             path: 'file-upload',
-            element: <></>,
+            element: <FileUploadPage />,
           },
           {
             path: 'date-time-picker',

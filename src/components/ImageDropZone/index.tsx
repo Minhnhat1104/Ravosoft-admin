@@ -13,9 +13,10 @@ interface ImageDropZoneProps {
   value: FileWithPath[];
   onChange: (nVal: FileWithPath[]) => void;
   disabled?: boolean;
+  style?: CSSProperties;
 }
 
-function ImageDropZone({ name, value, onChange, disabled = false }: ImageDropZoneProps) {
+function ImageDropZone({ name, value, onChange, disabled = false, style: styleProp }: ImageDropZoneProps) {
   const theme = useTheme();
   const { getRootProps, getInputProps, isFocused, isDragAccept, isDragReject } = useDropzone({
     disabled,
@@ -48,13 +49,15 @@ function ImageDropZone({ name, value, onChange, disabled = false }: ImageDropZon
     alignItems: 'center',
     padding: '20px',
     borderWidth: 2,
-    borderRadius: 2,
-    borderColor: theme.palette.grey['400'],
+    borderRadius: 4,
+    borderColor: theme.palette.secondary.light,
     borderStyle: 'dashed',
     backgroundColor: 'transparent',
-    color: '#bdbdbd',
+    color: theme.palette.text.primary,
     outline: 'none',
     transition: 'border .24s ease-in-out',
+    fontSize: 13,
+    ...styleProp,
   };
 
   const focusedStyle = {
@@ -80,7 +83,7 @@ function ImageDropZone({ name, value, onChange, disabled = false }: ImageDropZon
     <section style={{ width: '100%' }}>
       <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
-        <p> {t(LangKey.dragAndDropFileToUpload)}</p>
+        <p style={{ margin: 'auto', textAlign: 'center' }}> {t(LangKey.dragAndDropFileToUpload)}</p>
       </div>
 
       {value?.length > 0 && (
