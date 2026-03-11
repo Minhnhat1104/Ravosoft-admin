@@ -7,6 +7,7 @@ import LoadingCircular from '~/components/LoadingCircular';
 import SplitView from '~/components/SplitView';
 
 import Header from '../Header';
+import PageFooter from '../PageFooter';
 import PageTitle from '../PageTitle';
 import Sidebar from '../SideBar';
 
@@ -29,8 +30,11 @@ function DefaultLayout() {
           >
             <PageTitle />
             <Suspense fallback={<LoadingCircular sx={{ flex: 1, minHeight: 0 }} />}>
-              <Outlet />
+              <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <Outlet />
+              </Box>
             </Suspense>
+            <PageFooter />
           </Stack>
         </Stack>
       }
