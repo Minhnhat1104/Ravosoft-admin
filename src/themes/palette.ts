@@ -6,7 +6,7 @@ import { PaletteThemeProps } from '~/themes/types/theme';
 
 import ThemeOption from './theme';
 
-const Palette = (mode: ThemeMode, presetColor: PresetColor) => {
+export const getPaletteInstance = (mode: ThemeMode, presetColor: PresetColor) => {
   const colors: PalettesProps = mode === 'dark' ? presetDarkPalettes : presetPalettes;
 
   const paletteColor: PaletteThemeProps = ThemeOption(colors, presetColor, mode);
@@ -35,13 +35,11 @@ const Palette = (mode: ThemeMode, presetColor: PresetColor) => {
         dark: paletteColor.grey[500] || '',
       },
       background: {
-        paper: mode === 'dark' ? paletteColor.grey[100] : paletteColor.grey[0],
-        default: mode === 'dark' ? paletteColor.grey[100] : paletteColor.grey[0],
+        paper: mode === 'dark' ? '#000' : '#fff',
+        default: mode === 'dark' ? '#000' : '#fff',
         softGrey: mode === 'dark' ? paletteColor.grey[100] : paletteColor.grey[50],
         darkGrey: mode === 'dark' ? paletteColor.grey[200] : paletteColor.grey[100],
       },
     },
   });
 };
-
-export default Palette;

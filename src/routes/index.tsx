@@ -35,6 +35,10 @@ const TablePage = lazy(() => import('~/pages/Elements/TablePage'));
 const PaginationPage = lazy(() => import('~/pages/Elements/PaginationPage'));
 // Forms
 const InputPage = lazy(() => import('~/pages/Forms/InputPage'));
+const SliderPage = lazy(() => import('~/pages/Forms/SliderPage'));
+const CheckboxPage = lazy(() => import('~/pages/Forms/CheckboxPage'));
+const RadioPage = lazy(() => import('~/pages/Forms/RadioPage'));
+const SelectPage = lazy(() => import('~/pages/Forms/SelectPage'));
 
 const publicRoutes: RouteObject[] = [
   {
@@ -83,19 +87,19 @@ const publicRoutes: RouteObject[] = [
           },
           {
             path: 'checkbox',
-            element: <></>,
+            element: <CheckboxPage />,
           },
           {
             path: 'radio',
-            element: <></>,
+            element: <RadioPage />,
           },
           {
             path: 'select',
-            element: <></>,
+            element: <SelectPage />,
           },
           {
             path: 'range-slider',
-            element: <></>,
+            element: <SliderPage />,
           },
           {
             path: 'file-upload',

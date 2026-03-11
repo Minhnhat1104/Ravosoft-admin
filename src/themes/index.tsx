@@ -9,7 +9,7 @@ import { configState } from '~/atoms/config';
 import { CustomShadowProps, PalleteColor } from '~/themes/types/theme';
 
 import componentsOverride from './overrides';
-import Palette from './palette';
+import { getPaletteInstance } from './palette';
 import CustomShadows from './shadows';
 import Typography from './typography';
 
@@ -24,7 +24,7 @@ export default function ThemeCustomization({ children }: ThemeCustomizationProps
   const presetColor = 'default';
   const fontFamily = 'Roboto,sans-serif';
   const { mode } = useRecoilValue(configState);
-  const theme: Theme = useMemo<Theme>(() => Palette(mode, presetColor), [mode, presetColor]);
+  const theme: Theme = useMemo<Theme>(() => getPaletteInstance(mode, presetColor), [mode, presetColor]);
 
   const themeTypography: TypographyVariantsOptions = useMemo<TypographyVariantsOptions>(
     () => Typography(mode, fontFamily, theme),
@@ -86,6 +86,7 @@ export default function ThemeCustomization({ children }: ThemeCustomizationProps
       ...themes.components?.MuiTypography,
     },
   };
+  console.log('🚀 ~ themes:', themes);
 
   const setGlobalStyles = (theme: Theme) => (
     <GlobalStyles
