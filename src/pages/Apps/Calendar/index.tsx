@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { EventInput } from '@fullcalendar/core/index.js';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -6,6 +6,7 @@ import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import { alpha, Box, Button, Divider, Grid, Stack, Typography, useTheme } from '@mui/material';
+import useResizeObserver from 'use-resize-observer';
 
 import CustomCard from '~/components/CustomCard';
 import { PalleteColor } from '~/themes/types/theme';
@@ -64,13 +65,11 @@ export default function Calendar() {
     return () => draggable.destroy();
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
+  const { ref: containerRef } = useResizeObserver<HTMLDivElement>({
+    onResize: () => {
       calendarRef.current?.getApi().updateSize();
-    }, 0);
-
-    return () => clearTimeout(timer);
-  }, []);
+    },
+  });
 
   return (
     <Grid container spacing={3} sx={{ p: 2, pt: 0 }}>
@@ -120,7 +119,7 @@ export default function Calendar() {
       </Grid>
       <Grid size={{ md: 9 }}>
         <CustomCard sx={{ p: 2 }}>
-          <Box sx={calendarSx}>
+          <Box sx={calendarSx} ref={containerRef}>
             <FullCalendar
               ref={calendarRef}
               plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}

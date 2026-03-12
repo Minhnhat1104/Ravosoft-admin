@@ -17,9 +17,9 @@ export const getPaletteInstance = (mode: ThemeMode, presetColor: PresetColor) =>
       },
       ...paletteColor,
       text: {
-        primary: mode === 'dark' ? alpha(paletteColor.grey[900]!, 0.87) : paletteColor.grey[900],
-        secondary: mode === 'dark' ? alpha(paletteColor.grey[900]!, 0.45) : paletteColor.grey[600],
-        disabled: mode === 'dark' ? alpha(paletteColor.grey[900]!, 0.1) : paletteColor.grey[500],
+        primary: paletteColor.grey[900],
+        secondary: paletteColor.grey[600],
+        disabled: paletteColor.grey[500],
       },
       action: {
         disabled: paletteColor.grey[300],
