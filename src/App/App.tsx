@@ -48,7 +48,6 @@ function App() {
         <ThemeCustomization>
           <Suspense fallback={<LoadingCircular fullHeight sx={{ height: '100vh' }} />}>
             <Stack sx={{ width: '100vw', height: '100vh', overflowY: 'auto' }}>
-              <CssBaseline />
               <ToastContext>
                 <QueryClientProvider client={queryClient}>
                   <RouterProvider router={router} />

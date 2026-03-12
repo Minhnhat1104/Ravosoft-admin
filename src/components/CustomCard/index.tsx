@@ -14,7 +14,7 @@ const CustomCard = ({ sx, children, spacing, title }: CustomCardProps) => {
   return (
     <Stack
       sx={{
-        background: theme.palette.common.white,
+        background: theme.palette.background.paper,
         borderRadius: 1.5,
         boxShadow: '1px 1px 7px rgba(154,154,204,.1)',
         p: 2,

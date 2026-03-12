@@ -1,4 +1,3 @@
-import { PalettesProps, presetDarkPalettes, presetPalettes } from '@ant-design/colors';
 import { alpha, createTheme } from '@mui/material/styles';
 
 import { PresetColor, ThemeMode } from '~/themes/types/config';
@@ -7,11 +6,8 @@ import { PaletteThemeProps } from '~/themes/types/theme';
 import ThemeOption from './theme';
 
 export const getPaletteInstance = (mode: ThemeMode, presetColor: PresetColor) => {
-  const colors: PalettesProps = mode === 'dark' ? presetDarkPalettes : presetPalettes;
+  const paletteColor: PaletteThemeProps = ThemeOption(mode);
 
-  const paletteColor: PaletteThemeProps = ThemeOption(colors, presetColor, mode);
-
-  // mantis theme
   return createTheme({
     palette: {
       mode,
@@ -35,10 +31,10 @@ export const getPaletteInstance = (mode: ThemeMode, presetColor: PresetColor) =>
         dark: paletteColor.grey[500] || '',
       },
       background: {
-        paper: mode === 'dark' ? '#000' : '#fff',
-        default: mode === 'dark' ? '#000' : '#fff',
-        softGrey: mode === 'dark' ? paletteColor.grey[100] : paletteColor.grey[50],
-        darkGrey: mode === 'dark' ? paletteColor.grey[200] : paletteColor.grey[100],
+        paper: mode === 'dark' ? paletteColor.grey[50] : '#fff',
+        default: mode === 'dark' ? paletteColor.grey[50] : '#fff',
+        softGrey: paletteColor.grey[100],
+        darkGrey: paletteColor.grey[200],
       },
     },
   });

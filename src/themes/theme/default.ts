@@ -3,7 +3,11 @@ import { SimplePaletteColorOptions, type PaletteColorOptions } from '@mui/materi
 
 import { type PaletteThemeProps } from '~/themes/types/theme';
 
-const getPalleteColors = (colors: string[], contrastText = '#fff'): SimplePaletteColorOptions => {
+import { ThemeMode } from '../types/config';
+
+const getPalleteColors = (mode: ThemeMode, colors: string[], contrastText = '#fff'): SimplePaletteColorOptions => {
+  const fullColors = mode === 'light' ? colors : colors?.toReversed();
+
   return {
     lighter: colors[0],
     light: colors[3],
@@ -11,21 +15,21 @@ const getPalleteColors = (colors: string[], contrastText = '#fff'): SimplePalett
     dark: colors[6],
     darker: colors[8],
     contrastText,
-    50: colors[0],
-    100: colors[1],
-    200: colors[2],
-    300: colors[3],
-    400: colors[4],
-    500: colors[5],
-    600: colors[6],
-    700: colors[7],
-    800: colors[8],
-    900: colors[9],
+    50: fullColors[0],
+    100: fullColors[1],
+    200: fullColors[2],
+    300: fullColors[3],
+    400: fullColors[4],
+    500: fullColors[5],
+    600: fullColors[6],
+    700: fullColors[7],
+    800: fullColors[8],
+    900: fullColors[9],
   };
 };
 
 // https://m2.material.io/inline-tools/color/
-const Default = (colors: PalettesProps): PaletteThemeProps => {
+const Default = (mode: ThemeMode): PaletteThemeProps => {
   const primary = [
     '#e0f6f3',
     '#b1e8df',
@@ -104,15 +108,16 @@ const Default = (colors: PalettesProps): PaletteThemeProps => {
     '#005a51',
   ];
 
+  console.log('🚀 ~ mode:', mode);
   return {
-    primary: getPalleteColors(primary),
-    secondary: getPalleteColors(grey),
-    error: getPalleteColors(red),
-    warning: getPalleteColors(gold),
-    info: getPalleteColors(cyan),
-    success: getPalleteColors(green),
-    grey: getPalleteColors(grey),
-    link: getPalleteColors(primary).main,
+    primary: getPalleteColors(mode, primary),
+    secondary: getPalleteColors(mode, grey),
+    error: getPalleteColors(mode, red),
+    warning: getPalleteColors(mode, gold),
+    info: getPalleteColors(mode, cyan),
+    success: getPalleteColors(mode, green),
+    grey: getPalleteColors(mode, grey),
+    link: getPalleteColors(mode, primary).main,
   };
 };
 

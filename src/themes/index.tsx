@@ -86,7 +86,6 @@ export default function ThemeCustomization({ children }: ThemeCustomizationProps
       ...themes.components?.MuiTypography,
     },
   };
-  console.log('🚀 ~ themes:', themes);
 
   const setGlobalStyles = (theme: Theme) => (
     <GlobalStyles
